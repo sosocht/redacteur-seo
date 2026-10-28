@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rédacteur SEO · R5.MDEE.12</title>
+<meta name="description" content="Présentation du métier de rédacteur SEO. R5.MDEE.12 Référencement, IUT de Roubaix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+<style>
+/* Design System : .claude/skills/slides-design/ds.html, copie locale dans ../ds.html */
+:root{
+  --encre:#0a0a0a; --fond:#f5f5f5; --carte:#fff; --filet:#e4e4e2;
+  --bleu:#1d9bf0; --vert:#008000; --rouge:#ff0000;
+  --sourdine:rgba(10,10,10,.55); --tenu:rgba(10,10,10,.38);
+  --bleu-08:rgba(29,155,240,.08); --bleu-40:rgba(29,155,240,.4);
+  --fs-titre:clamp(1.9rem,3.9vw,3.3rem);
+  --fs-chiffre:clamp(22px,2.34vw,2.1rem);
+  --fs-md:clamp(14px,1.09vw,1.05rem);
+  --fs-sm:clamp(11px,.94vw,.84rem);
+  --sans:"Plus Jakarta Sans",system-ui,sans-serif;
+  --r:20px; --rail:6vh;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-size:var(--fs-md);font-weight:400;line-height:1.5;
+  color:var(--encre);background:var(--fond);scroll-snap-type:y mandatory;overflow-x:hidden}
+img{max-width:none}
+
+/* rail de sommaire */
+.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);background:var(--carte);
+  border-right:1px solid var(--filet);display:flex;flex-direction:column;align-items:center;
+  padding:1.4vh 0;gap:.6vh;z-index:50}
+.rail .mark{width:4.4vh;height:4.4vh;margin:.6vh 0 .4vh;border-radius:1.2vh;background:var(--encre);color:#fff;
+  display:grid;place-items:center;font-size:1.3vh;font-weight:700;letter-spacing:.04em;text-decoration:none}
+.rail .liens{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;padding:.8vh 0}
+.rail .liens a{width:3.6vh;height:3.6vh;display:grid;place-items:center;border-radius:1.1vh;background:var(--fond);border:1px solid var(--filet);
+  font-size:var(--fs-sm);font-weight:600;color:var(--sourdine);text-decoration:none;transition:.18s}
+.rail .liens a:hover{background:#e9e9e6;color:var(--encre)}
+.rail .liens a.on{color:#fff;background:var(--encre);border-color:var(--encre)}
+.rail .bar{width:.8vh;height:9vh;background:var(--filet);border-radius:2px;overflow:hidden}
+.rail .bar i{display:block;width:100%;background:var(--bleu);height:0}
+
+section{height:100vh;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;
+  padding:9vh 2.6vw 7vh calc(var(--rail) + 2.6vw);display:flex;flex-direction:column;
+  justify-content:flex-start;border-top:1px solid var(--filet);position:relative;overflow:hidden}
+section:first-of-type{border-top:0}
+.num{position:absolute;bottom:2.6vh;right:2.6vw;font-size:var(--fs-sm);font-weight:600;letter-spacing:.16em;color:var(--tenu);z-index:3}
+h1,h2{font-size:var(--fs-titre);font-weight:600;letter-spacing:-.035em;line-height:1.04;margin:0 0 3vh}
+h3{font-size:var(--fs-md);font-weight:700;margin:0 0 .7em}
+strong,b{font-weight:600}
+.bleu{color:var(--bleu)} .vert{color:var(--vert)} .rouge{color:var(--rouge)}
+.pied{position:absolute;bottom:2.6vh;left:calc(var(--rail) + 2.6vw);right:10vw;font-size:var(--fs-sm);
+  font-weight:300;color:var(--tenu);z-index:3;margin:0}
+.pied img{height:1.2em;width:auto;vertical-align:-.22em;margin:0 .3em 0 .15em;border-radius:3px}
+.lg-i{position:absolute;top:2.9vh;right:2.6vw;height:3vh;width:auto;z-index:6;display:block}
+#s1 .lg-i,#s14 .lg-i{background:#fff;border-radius:8px;padding:.5vh .8vh;height:4vh}
+.manque{background:rgba(255,0,0,.1);color:var(--rouge);border-radius:6px;padding:0 .3em;font-weight:600}
+
+/* pilules et étiquettes */
+.chip{display:inline-flex;align-items:center;gap:.45em;border-radius:999px;padding:.3em .85em;font-size:var(--fs-sm);
+  font-weight:600;background:var(--carte);color:var(--encre);border:1px solid rgba(10,10,10,.28);white-space:nowrap}
+.chip.noir{background:var(--encre);color:#fff;border-color:var(--encre)}
+.chip.bleu{background:var(--bleu);color:#fff;border-color:var(--bleu)}
+.chip.vert{background:#006900;color:#fff;border-color:#006900}
+.chip.rouge{background:#fff;color:var(--rouge);border-color:var(--rouge)}
+.chip img{height:1.3em;width:auto}
+.chips{display:flex;flex-wrap:wrap;gap:.5em}
+
+/* emplacement d'image à fournir */
+.ph{border:2px dashed var(--bleu-40);background:var(--bleu-08);border-radius:var(--r);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:1em;color:var(--bleu);min-height:0;min-width:0;overflow:hidden}
+.ph b{font-size:var(--fs-md);font-weight:700}
+.ph span{font-size:var(--fs-sm);color:var(--sourdine);margin-top:.35em;max-width:32ch}
+.ph .qui{margin-top:.8em;font-size:var(--fs-sm);font-weight:600;color:var(--bleu)}
+.cadre{border-radius:var(--r);overflow:hidden;border:1px solid var(--filet);background:#111;min-height:0;position:relative}
+.cadre img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ============ S1 · COUVERTURE ============ */
+#s1{background:var(--encre);color:#fff;border-top:0;padding:0}
+#s1 .fond{position:absolute;inset:0;overflow:hidden}
+#s1 .fond img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+#s1 .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.45) 0%,rgba(10,10,10,.62) 55%,rgba(10,10,10,.9) 100%)}
+.tw{position:absolute;left:var(--x);top:var(--y);width:var(--l,86%);transform:translate(-50%,-50%);margin:0;z-index:2;text-align:center}
+#s1 h1{font-size:clamp(3rem,7.4vw,6.8rem);font-weight:600;letter-spacing:-.045em;line-height:1;margin:0}
+#s1 .sub{margin:2.6vh auto 0;color:#e4e9eb;font-size:clamp(17px,1.62vw,1.5rem);line-height:1.4;max-width:40ch}
+#s1 .mention{font-size:var(--fs-sm);font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:#8ecdf7}
+#s1 .meta{font-size:var(--fs-sm);font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.04em}
+#s1 .num{color:rgba(255,255,255,.55)}
+#s1 .credit{position:absolute;left:calc(var(--rail) + 2.6vw);bottom:2.6vh;font-size:var(--fs-sm);font-weight:300;color:rgba(255,255,255,.6);z-index:3;margin:0}
+#s1 .credit img{height:1.2em;width:auto;vertical-align:-.22em;margin:0 .3em 0 .2em;background:#fff;border-radius:4px;padding:1px}
+
+/* ============ S2 · PROBLÉMATIQUE ============ */
+.pb{flex:1;min-height:0;display:grid;grid-template-columns:.8fr 1.45fr;gap:3vw;align-items:stretch}
+.pb-g{display:flex;flex-direction:column;justify-content:center}
+.pb-q{font-size:clamp(2rem,3.6vw,3.2rem);font-weight:600;letter-spacing:-.035em;line-height:1.08;margin:0 0 5vh}
+.pb-q em{font-style:normal;color:var(--bleu)}
+.som{display:grid;gap:1.4vh}
+.som a{display:flex;align-items:baseline;gap:1em;text-decoration:none;color:var(--encre);border-top:1px solid var(--filet);padding-top:1.2vh}
+.som .n{font-size:var(--fs-chiffre);font-weight:300;color:var(--tenu);letter-spacing:-.03em;width:2.2em;flex:none}
+.som b{font-size:var(--fs-md);font-weight:600}
+.som .p{margin-left:auto;font-size:var(--fs-sm);color:var(--tenu);white-space:nowrap}
+.pb-d{position:relative;min-height:0}
+.pb-d .cadre{position:absolute;inset:0}
+.pb-d .cadre img{object-fit:cover;object-position:0 0}
+.pb-d .fleche{position:absolute;left:1.4vw;top:-1.3em;z-index:2}
+
+/* ============ S3 · DÉFINITION ============ */
+.def{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1.1fr;gap:2.6vw}
+.def .cadre{height:100%}
+.def-d{display:flex;flex-direction:column;gap:2.2vh;min-height:0}
+.def-phrase{font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em;line-height:1.15;margin:0}
+.pas{display:grid;grid-template-columns:1fr 1fr;gap:1vw}
+.pas div{border:1px solid var(--filet);background:var(--carte);border-radius:16px;padding:.8em 1em}
+.pas b{display:block;font-size:var(--fs-md)} .pas span{font-size:var(--fs-sm);color:var(--sourdine)}
+.methode{margin-top:auto;display:grid;gap:1.2vh}
+.methode .l{display:flex;gap:.5vw;align-items:center}
+.methode .l > span:first-child{font-size:var(--fs-sm);font-weight:600;color:var(--tenu);width:5.5em;flex:none}
+.methode .c{flex:1;text-align:center;border-radius:12px;padding:.55em .3em;font-size:var(--fs-sm);font-weight:600;background:#e9e9e6;color:var(--tenu)}
+.methode .c.on{background:var(--bleu);color:#fff}
+
+/* ============ S4 · MISSIONS ============ */
+.mis{flex:1;min-height:0;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1vw;align-items:stretch}
+.mis-c{display:flex;flex-direction:column;gap:1.2vh;min-height:0}
+.mis-c .ph{flex:1}
+.mis-c .tete{display:flex;flex-direction:column;align-items:flex-start;gap:.8vh}
+.mis-c .tete b{font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em;line-height:1.05;white-space:nowrap}
+.mis-lien{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4em;color:var(--sourdine);font-size:var(--fs-sm);font-weight:600;width:5.5vw;text-align:center}
+.mis-lien i{font-style:normal;font-size:var(--fs-chiffre);color:var(--bleu)}
+.mis-bas{margin-top:2vh}
+.mis{align-items:center}
+.mis-c .preuve{width:100%;aspect-ratio:3024/3000;flex:none}
+
+/* ============ S5 · PROCESS ============ */
+.flux{flex:1;display:grid;grid-template-columns:repeat(7,1fr);gap:.8vw;align-items:center;align-content:center;position:relative}
+.flux::before{content:"";position:absolute;left:3%;right:3%;top:calc(50% - 10.5vh);height:2px;background:var(--filet)}
+.et{height:30vh;justify-content:flex-start}
+.et{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.2vh}
+.et .rond{width:9vh;height:9vh;border-radius:50%;display:grid;place-items:center;background:var(--carte);border:2px solid var(--encre);
+  font-size:var(--fs-chiffre);font-weight:600;z-index:1}
+.et.cle .rond{background:var(--bleu);border-color:var(--bleu);color:#fff}
+.et b{font-size:clamp(15px,1.35vw,1.3rem);line-height:1.2;min-height:2.4em}
+.et .outils{display:flex;flex-direction:column;gap:.6vh;align-items:center}
+.logo-ph{display:inline-flex;align-items:center;justify-content:center;gap:.4em;border:1.5px dashed var(--bleu-40);border-radius:10px;
+  padding:.35em .7em;font-size:var(--fs-sm);font-weight:600;color:var(--encre);background:var(--carte);white-space:nowrap}
+.logo-ph img{height:1.3em;width:auto}
+.logo-ph.ok{border-style:solid;border-color:var(--filet)}
+.flux-note{margin-top:auto;display:flex;gap:1vw;justify-content:center}
+
+/* ============ S6 · AVANT / APRÈS ============ */
+.aa{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1.25fr;gap:2vw;align-items:center}
+.page{background:var(--carte);border-radius:var(--r);border:2px solid var(--filet);padding:2em 1.8em 1.8em;display:flex;flex-direction:column;gap:2.2vh;position:relative;min-height:0;font-size:clamp(15px,1.35vw,1.3rem)}
+.page.avant{border-color:var(--rouge)} .page.apres{border-color:var(--vert)}
+.page .lbl{position:absolute;top:-1.1em;left:1.2em}
+.serp{border-bottom:1px solid var(--filet);padding-bottom:1.2vh}
+.serp .t{color:#1a0dab;font-size:1.1em;font-weight:600;line-height:1.3}
+.serp .u{color:#006621;font-size:.8em}
+.serp .m{color:var(--sourdine);font-size:.85em;line-height:1.4}
+.page .h2{font-size:1.1em;font-weight:700;margin:0}
+.page p{margin:0;font-size:1em;line-height:1.5}
+.page a{color:#1a0dab}
+.page .img{font-size:.8em;color:var(--sourdine);border:1px dashed var(--filet);border-radius:10px;padding:.4em .7em}
+.bulle{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:var(--vert);color:#fff;
+  font-size:var(--fs-sm);font-weight:700;margin-right:.35em;vertical-align:.08em;flex:none}
+.legende-aa{display:flex;flex-wrap:wrap;gap:.5em 1.4em;margin-top:2vh;font-size:var(--fs-sm);font-weight:600}
+
+/* ============ S7 · COMPÉTENCES ============ */
+.comp{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.4vw}
+.comp-c{border-radius:var(--r);padding:1.4em 1.5em;display:flex;flex-direction:column;gap:1.4vh}
+.comp-c.clair{background:var(--carte);border:1px solid var(--filet)}
+.comp-c.noir{background:var(--encre);color:#fff}
+.comp-c .gros{font-size:clamp(2rem,3.4vw,3.1rem);font-weight:600;letter-spacing:-.04em;line-height:1;white-space:nowrap;margin-bottom:1vh}
+.comp-c ul{list-style:none;margin:0;padding:0;display:grid;gap:1.6vh}
+.comp-c li{font-size:clamp(15px,1.35vw,1.3rem);font-weight:500;border-top:1px solid var(--filet);padding-top:1.4vh}
+.comp-c.noir li{border-color:rgba(255,255,255,.2)}
+.citation{display:flex;flex-direction:column}
+.citation .ph{flex:1}
+.citation .q{font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em;line-height:1.2}
+
+/* ============ S7 · CE QUE DEMANDENT LES OFFRES ============ */
+.of2{flex:1;min-height:0;display:grid;grid-template-rows:1fr auto;gap:2vh}
+.of2{grid-template-rows:auto 1fr}
+.of2 .of-caps{display:flex;justify-content:space-between;align-items:stretch;gap:1vw;min-height:0;height:calc((100vw - 6.9vh - 8.3vw) / 3.86)}
+.of2 .of-caps .preuve{height:100%;width:auto;max-width:none;flex:none;align-self:stretch}
+.comp2{display:grid;grid-template-columns:1fr 1fr .9fr;gap:1.2vw}
+.comp2 .comp-c{padding:1.1em 1.3em;gap:1.2vh}
+.comp2 .gros{font-size:var(--fs-chiffre);white-space:nowrap}
+.comp2 .chip{font-size:var(--fs-sm)}
+.comp-c.noir .chip{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+
+/* ============ S8 · OUTILS ============ */
+.out{flex:1;min-height:0;display:grid;grid-template-columns:1.5fr 1fr;gap:2vw}
+.cat{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:1vw}
+.cat .logo-ph{font-size:var(--fs-md);padding:.5em .9em}
+.cat > div{background:var(--carte);border:1px solid var(--filet);border-radius:16px;padding:.9em 1em;display:flex;flex-direction:column;gap:.9vh}
+.cat h3{margin:0;font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:.08em;color:var(--sourdine)}
+.cat .logos{display:flex;flex-wrap:wrap;gap:.45em}
+.out-d{display:flex;flex-direction:column;gap:1.4vh;min-height:0}
+.out-d .ph{flex:1}
+.out{grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr)}
+.out-d{justify-content:center;gap:2.4vh}
+.out-d .preuve{width:100%;aspect-ratio:1800/954;flex:none}
+
+/* ============ S9 · STATUTS ============ */
+.st{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:1.4vw}
+.st-c{border-radius:var(--r);padding:1.4em 1.5em;display:flex;flex-direction:column;gap:1.6vh}
+.st-c.sal{background:#dcecf8} .st-c.free{background:#dbeddb}
+.st-c .gros{font-size:var(--fs-chiffre);font-weight:600;letter-spacing:-.02em}
+.st-c ul{margin:0;padding-left:1.1em;display:grid;gap:1.4vh;align-content:start}
+.st-c .plus{margin-top:auto;font-size:var(--fs-sm);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--sourdine)}
+.st-c li{font-size:clamp(15px,1.35vw,1.3rem)}
+.acces{margin-top:2vh;display:flex;align-items:center;gap:.8em;flex-wrap:wrap}
+.acces > b{font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:.08em;color:var(--sourdine)}
+
+/* ============ S10 · OFFRES ============ */
+.of{flex:1;min-height:0;display:grid;grid-template-rows:1fr auto;gap:2vh}
+.of-caps{display:grid;grid-template-columns:repeat(4,1fr);gap:1vw;min-height:0}
+table{border-collapse:collapse;width:100%;font-size:var(--fs-sm);background:var(--carte);border-radius:16px;overflow:hidden}
+th,td{border:1px solid var(--filet);padding:.55em .8em;text-align:left;vertical-align:middle}
+th{background:var(--encre);color:#fff;font-weight:600;border-color:var(--encre)}
+td.vide{color:var(--tenu)}
+
+/* ============ S11 · RÉMUNÉRATION ============ */
+.rem{flex:1;min-height:0;display:grid;grid-template-columns:1.5fr 1fr;gap:3vw;align-items:center}
+.barres{display:grid;gap:3.2vh}
+.barres .l{display:grid;grid-template-columns:11em 1fr 9em;align-items:center;gap:1vw}
+.barres .val{font-size:var(--fs-md);font-weight:700;white-space:nowrap}
+.barres .l > b{font-size:var(--fs-md)}
+.echelle{position:relative;height:5.4vh;background:#e9e9e6;border-radius:999px}
+.plage{position:absolute;top:0;bottom:0;left:var(--a);width:calc(var(--b) - var(--a));border-radius:999px;background:var(--encre);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:var(--fs-sm);font-weight:700;white-space:nowrap}
+.plage.v{background:var(--vert)}
+.graduation{display:grid;grid-template-columns:11em 1fr 9em;gap:1vw;font-size:var(--fs-sm);color:var(--tenu)}
+.graduation div{display:flex;justify-content:space-between}
+.fr-stats{display:grid;gap:1.2vw}
+.stat{border-radius:var(--r);padding:1em 1.3em;background:var(--carte);border:1px solid var(--filet)}
+.stat b{display:block;font-size:var(--fs-chiffre);font-weight:600;letter-spacing:-.03em;line-height:1}
+.stat span{display:block;margin-top:.45em;font-size:var(--fs-sm);font-weight:600;color:var(--sourdine)}
+.stat.noir{background:var(--encre);border-color:var(--encre);color:#fff} .stat.noir span{color:rgba(255,255,255,.75)}
+
+/* ============ S12 · ÉVOLUTIONS ============ */
+.esc{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1vw;align-items:end;position:relative}
+.marche{background:var(--carte);border:1px solid var(--filet);border-radius:var(--r);padding:1.2em 1.3em;display:flex;flex-direction:column;gap:.5vh}
+.marche .n{font-size:var(--fs-sm);font-weight:700;color:var(--tenu);letter-spacing:.1em}
+.marche b{font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em;line-height:1.1}
+.marche span{font-size:var(--fs-sm);color:var(--sourdine)}
+.marche:nth-child(1){height:34%} .marche:nth-child(2){height:52%} .marche:nth-child(3){height:70%}
+.marche:nth-child(4){height:88%;background:var(--encre);color:#fff;border-color:var(--encre)} .marche:nth-child(4) span,.marche:nth-child(4) .n{color:rgba(255,255,255,.7)}
+.branche{position:absolute;left:0;top:0;width:44%;border-radius:var(--r);border:2px solid var(--bleu);background:var(--bleu-08);padding:1em 1.2em}
+.branche b{color:var(--bleu);font-size:var(--fs-chiffre);font-weight:600;letter-spacing:-.02em}
+.branche p{margin:.3em 0 0;font-size:var(--fs-sm);color:var(--sourdine)}
+
+/* ============ S13 · L'IA ============ */
+.ia{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1.15fr;gap:2.4vw}
+.ia-stats{display:grid;gap:1.4vh;grid-template-rows:1fr auto auto}
+.ia-stats .grand{display:flex;flex-direction:column;justify-content:flex-end}
+.ia-stats .grand{border-radius:var(--r);background:var(--encre);color:#fff;padding:1.2em 1.4em}
+.ia-stats .grand b{display:block;font-size:clamp(3rem,6vw,5.4rem);font-weight:600;letter-spacing:-.05em;line-height:.95}
+.ia-stats .grand span{font-size:var(--fs-sm);font-weight:600;color:rgba(255,255,255,.75)}
+.ia-stats .duo{display:grid;grid-template-columns:1fr 1fr;gap:1vw}
+.ia-d{display:grid;grid-template-rows:auto 1fr;gap:1.6vh;min-height:0}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:1vw}
+.vs > div{border-radius:16px;padding:1em 1.1em;background:var(--carte);border:1px solid var(--filet)}
+.vs > div.g{border:2px solid var(--vert)}
+.vs ul{margin:.5em 0 0;padding-left:1.1em;display:grid;gap:.5vh;font-size:var(--fs-md)}
+
+/* ============ S14 · THÉORIE VS TERRAIN ============ */
+.tvt{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start}
+.tvt table{font-size:var(--fs-md)}
+.tvt td,.tvt th{padding:.75em 1em}
+.tvt td:first-child{font-weight:600;width:15%}
+.tvt td.ecart{text-align:center;width:9%;font-size:var(--fs-chiffre);font-weight:600;color:var(--tenu)}
+
+/* ============ S15 · CONCLUSION ============ */
+#s14{background:var(--encre);color:#fff}
+#s14 .num{color:rgba(255,255,255,.55)}
+.concl{flex:1;display:flex;flex-direction:column;justify-content:center;gap:5vh}
+.concl .rep{font-size:clamp(2.4rem,4.8vw,4.4rem);font-weight:600;letter-spacing:-.045em;line-height:1.02;max-width:20ch;margin:0}
+.concl .rep em{font-style:normal;color:#8ecdf7}
+.concl .trois{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4vw}
+.concl .trois div{border-top:1px solid rgba(255,255,255,.25);padding-top:1.4vh}
+.concl .trois b{display:block;font-size:var(--fs-md)}
+.concl .trois span{font-size:var(--fs-sm);color:rgba(255,255,255,.65)}
+.concl .ph{background:rgba(29,155,240,.14);color:#8ecdf7}
+.concl .ph span{color:rgba(255,255,255,.6)}
+
+/* ============ S16 · ANNEXE ============ */
+.anx{display:grid;grid-template-columns:3fr 1.1fr;gap:1.2vw;flex:1;min-height:0}
+.anx-c{background:var(--carte);border:1px solid var(--filet);border-radius:var(--r);padding:1.1em 1.4em;display:flex;flex-direction:column;min-height:0}
+.apa{list-style:none;margin:0;padding:0;counter-reset:src;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(10,1fr);grid-auto-flow:column;gap:.6vh .8vw;flex:1;min-height:0}
+.apa li{counter-increment:src;position:relative;display:flex;align-items:center;background:#f3f3f1;border:1px solid var(--filet);border-radius:12px;padding:.1em .8em .1em 2.8em;min-height:0;overflow:hidden}
+.apa li::before{content:counter(src,decimal-leading-zero);position:absolute;left:.8em;top:50%;transform:translateY(-50%);font-weight:700;font-size:clamp(13px,.95vw,.95rem);color:var(--bleu)}
+.apa .r{font-size:clamp(11.5px,.84vw,.82rem);font-style:italic;color:var(--sourdine);line-height:1.2;overflow-wrap:anywhere}
+.apa li i{font-style:normal;font-weight:700;color:var(--encre)}
+.apa li.a-completer{background:rgba(255,0,0,.05);border-color:rgba(255,0,0,.25)}
+.anx-ia{background:var(--encre);color:#fff;border-radius:var(--r);padding:1.2em 1.3em;display:flex;flex-direction:column;gap:1.6vh;min-height:0;overflow:hidden}
+.anx-ia h3{color:#fff;margin:0}
+.anx-ia .qui{display:flex;align-items:center;gap:.5em;font-weight:700;font-size:var(--fs-md)}
+.anx-ia .qui img{height:1.3em;width:auto}
+.anx-ia ul{margin:.4em 0 0;padding-left:1.2em}
+.anx-ia li{font-size:var(--fs-sm);line-height:1.4;color:rgba(255,255,255,.85);margin:.15em 0}
+.anx-ia .gfp{margin-top:auto;width:100%;height:auto;border-radius:12px;display:block}
+
+/* notes orateur, touche N */
+.notes{display:none;position:fixed;left:var(--rail);right:0;bottom:0;background:var(--encre);
+  color:#fff;padding:1.6vh 4vw;font-size:var(--fs-sm);line-height:1.55;max-height:34vh;overflow:auto;z-index:40;cursor:text;outline:0;white-space:pre-line}
+body.notesvues section.ici .notes{display:block}
+.notes:focus{box-shadow:inset 0 3px 0 var(--bleu)}
+.notes::after{content:attr(data-aide);display:block;margin-top:.7em;font-size:11px;color:rgba(255,255,255,.45);user-select:none}
+.toast{position:fixed;left:50%;bottom:3vh;transform:translateX(-50%);background:var(--bleu);color:#fff;border-radius:999px;padding:.5em 1.2em;font-size:13px;font-weight:600;z-index:95;opacity:0;transition:opacity .25s;pointer-events:none}
+.toast.on{opacity:1}
+
+/* mode réglage, touche T */
+body.reglage [data-tw]{outline:1px dashed rgba(29,155,240,.75);outline-offset:1px;cursor:grab}
+body.reglage [data-tw]:hover{outline:1.5px solid var(--bleu)}
+body.reglage [data-tw].vise{outline:2.5px solid var(--bleu)}
+.panneau{display:none;position:fixed;right:16px;top:16px;z-index:90;max-height:78vh;overflow:auto;background:var(--encre);color:#e4e9eb;
+  border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:12px 16px;font-size:12px;font-weight:300;line-height:1.6;width:360px}
+.panneau.gauche{right:auto;left:calc(var(--rail) + 16px)}
+body.reglage .panneau{display:block}
+.panneau b{font-weight:600;color:#fff}
+.panneau .l{display:flex;justify-content:space-between;gap:14px;font-family:ui-monospace,Menlo,monospace;cursor:pointer;padding:1px 4px;border-radius:6px}
+.panneau .l:hover{background:rgba(255,255,255,.08)}
+.panneau .l span:last-child{text-align:right;color:rgba(255,255,255,.62)}
+.panneau .l.vise{color:#7fcbff;background:rgba(29,155,240,.16)}
+.panneau .outils-r{margin:8px 0;padding:8px 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:5px}
+.panneau .outils-r > div{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+.panneau .outils-r span{min-width:92px;color:rgba(255,255,255,.7)}
+.panneau button{font:inherit;font-size:12px;font-weight:600;background:#232323;color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:2px 9px;cursor:pointer}
+.panneau button:hover{border-color:var(--bleu)}
+.panneau button.on{background:var(--bleu);border-color:var(--bleu)}
+.panneau .aide{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.62)}
+
+/* ============ RETOURS DE SOFIAN DU 26/09 ============ */
+/* rail en verre liquide (repris du deck du 3e livrable de social media) : flottant, transparent, flou léger, numéros resserrés, jauge plus épaisse */
+.rail{top:1.4vh;bottom:1.4vh;left:.9vh;border-radius:2.6vh;border:1px solid rgba(10,10,10,.08);
+  background:color-mix(in srgb,#fff 28%,transparent);-webkit-backdrop-filter:blur(1.5px) saturate(1.15);backdrop-filter:blur(1.5px) saturate(1.15);
+  box-shadow:inset 1px 1px 1px rgba(255,255,255,.6),0 8px 30px rgba(10,10,10,.12)}
+.rail .liens{flex:0 0 auto;justify-content:center;gap:1.6vh;margin:auto 0}
+.rail .liens a{background:rgba(255,255,255,.62)}
+.rail .bar{width:2vh;height:15vh;border-radius:999px;background:rgba(10,10,10,.14)}
+.rail .mark{width:3.6vh;height:3.6vh;margin:1.2vh 0 .4vh;font-size:1.1vh}
+.rail .bar i{border-radius:999px}
+section{padding-left:calc(var(--rail) + .9vh + 2.6vw)}
+.pied{left:calc(var(--rail) + .9vh + 2.6vw)}
+/* capture preuve : cadre aux dimensions exactes de l'image, pour que le rayon de 20 px tombe sur ses coins */
+.preuve{border-radius:var(--r);overflow:hidden;border:1px solid var(--filet);background:var(--carte);align-self:center;max-width:100%;max-height:100%;position:relative}
+.preuve img{display:block;width:100%;height:100%;object-fit:contain}
+/* S2 : capture entière, pilule en bas à droite */
+.pb-d{display:flex;align-items:center}
+.pb-d .preuve{width:100%;aspect-ratio:2000/1183}
+.pb-d .fleche{top:auto;left:auto;right:1.2vw;bottom:1.6vh;font-size:var(--fs-md);padding:.4em 1em}
+/* S3 : illustration à son format (plus de mots coupés), méthode du cours dessous, définition entre guillemets */
+.def{grid-template-columns:1.3fr 1fr;align-items:stretch}
+.def-g{display:flex;flex-direction:column;gap:2.4vh;min-height:0;justify-content:center}
+.def-g .cadre{height:auto;aspect-ratio:1920/1047;flex:none}
+.def-d{justify-content:center;gap:3vh}
+.def-phrase{font-size:clamp(20px,2.05vw,1.95rem);line-height:1.25}
+.def-phrase .gm{color:var(--bleu)}
+.methode{margin-top:0}
+.pas div{border-color:rgba(255,0,0,.35);background:rgba(255,0,0,.06);padding:1em 1.1em}
+.pas b{color:#c40000;font-size:clamp(16px,1.4vw,1.35rem);font-weight:600}
+.pas span{font-size:var(--fs-md)}
+/* S9 : cartes un peu moins hautes, plus d'air pour les trois pilules « Accès » */
+.st{flex:0 1 auto;height:58vh;grid-template-columns:1fr 1fr auto}
+.acces{margin-top:auto;margin-bottom:auto;gap:1em}
+.acces .chip{font-size:var(--fs-md);padding:.45em 1.1em}
+.acces > b{font-size:var(--fs-md)}
+/* S11 : sous-titre texte, marches remplies (salaire, experts) */
+.sous-t{margin:-1.4vh 0 3vh;font-size:clamp(16px,1.4vw,1.35rem);color:var(--sourdine);max-width:62ch}
+.sous-t b{color:var(--bleu);font-weight:600}
+.marche{justify-content:flex-start;gap:.6vh}
+.marche .pay{margin-top:auto;font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em;line-height:1}
+.marche .pay small{display:block;font-size:var(--fs-sm);font-weight:400;color:var(--sourdine);letter-spacing:0;margin-top:.3em}
+.marche:nth-child(4) .pay small{color:rgba(255,255,255,.7)}
+.esc{grid-template-columns:repeat(4,minmax(0,1fr))}
+.marche{min-width:0}
+.marche .qui-l{display:flex;flex-wrap:wrap;gap:.4em;margin-top:1.4vh}
+.marche .chip{display:inline-block;white-space:normal;text-align:left;line-height:1.3}
+.pb-q{font-size:clamp(1.8rem,3.05vw,2.8rem)}
+.marche:nth-child(4) .chip{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.marche:nth-child(1){height:58%} .marche:nth-child(2){height:72%} .marche:nth-child(3){height:86%} .marche:nth-child(4){height:100%}
+/* S14 : conclusion refaite, rangée de blocs pleins */
+#s14{background:var(--fond);color:var(--encre)}
+#s14 .num{color:var(--tenu)}
+#s14 .lg-i{background:none;padding:0;height:3vh}
+.fin{flex:1;min-height:0;display:grid;grid-template-rows:1fr auto;gap:2.4vh}
+.fin-blocs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2vw;min-height:0}
+.fin-blocs > div{border-radius:var(--r);padding:1.4em 1.5em;display:flex;flex-direction:column;justify-content:space-between;color:#fff}
+.fin-blocs .k{font-size:clamp(2.2rem,3.4vw,3rem);font-weight:600;letter-spacing:-.04em;line-height:1}
+.fin-blocs b{display:block;font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em;line-height:1.1}
+.fin-blocs span{display:block;margin-top:.6em;font-size:var(--fs-md);opacity:.85}
+.fin-blocs .e{background:var(--encre)} .fin-blocs .b{background:var(--bleu)} .fin-blocs .v{background:var(--vert)}
+.fin .ph{min-height:12vh}
+/* S5 : process plus grand, logos officiels */
+.flux{align-content:center;grid-template-columns:repeat(7,minmax(0,1fr))}
+.et .logo-ph{white-space:normal;text-align:center}
+.flux::before{top:calc(50% - 17vh)}
+.et{height:auto;min-height:48vh;gap:2vh}
+.et .rond{width:15vh;height:15vh;font-size:clamp(30px,3.4vw,3.1rem)}
+.et b{font-size:clamp(17px,1.7vw,1.6rem)}
+.et .outils{gap:1.2vh}
+.et .logo-ph{font-size:clamp(14px,1.2vw,1.15rem);padding:.5em .9em}
+.et .logo-ph img{height:1.7em}
+.logo-ph img{height:1.5em;border-radius:4px}
+/* S8 : chaque outil en tuile, icône au-dessus du nom */
+.cat .logos{display:grid;grid-template-columns:1fr 1fr;gap:.8vh .6vw;flex:1;align-content:center}
+.cat .logo-ph{flex-direction:column;gap:.5em;border:0;background:none;padding:.3em;font-size:var(--fs-md);white-space:normal;text-align:center;line-height:1.2}
+.cat .logo-ph img{height:5.2vh;width:auto;border-radius:8px}
+/* S12 : capture de la source dans le bloc noir, réponse ChatGPT à droite */
+.ia-stats .grand{justify-content:space-between;gap:2vh}
+.preuve.da{width:100%;aspect-ratio:1736/624;flex:none;border:0}
+.ia-d{grid-template-rows:auto 1fr;align-items:center}
+.preuve.gpt{aspect-ratio:1610/1180;height:100%;max-height:100%;width:auto;justify-self:center}
+/* S6 : deux cadres de même hauteur, plus grands */
+.aa{align-items:stretch;margin-top:1vh}
+.page{justify-content:space-evenly;gap:2vh;font-size:clamp(15px,1.42vw,1.35rem)}
+.page .img{font-size:.8em}
+.legende-aa{margin-top:2.4vh;margin-bottom:4vh}
+.cap-aa{width:100%;flex:none;align-self:stretch}
+.aa{grid-template-columns:1fr 1fr}
+/* ===== retours de Sofian du 26/09, 2e série ===== */
+/* S5 : logos une étape sur deux au-dessus de la bulle, pour aérer */
+.flux::before{display:none}
+.flux{align-items:stretch}
+.et{display:grid;grid-template-rows:17vh auto auto 17vh;row-gap:1.6vh;justify-items:center;align-items:start;min-height:0;height:auto;position:relative}
+.et .rond{grid-row:2} .et > b{grid-row:3} .et .outils{grid-row:4}
+.et:nth-child(even) .outils{grid-row:1;align-self:end}
+.et + .et::before{content:"";position:absolute;top:calc(17vh + 1.6vh + 7.5vh);left:calc(-50% - .8vw);right:50%;height:2px;background:var(--filet);z-index:0}
+/* S6 : légendes des captures, photo réelle avec son alt */
+.cap-l{font-size:var(--fs-sm);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--sourdine);margin-bottom:-1vh}
+.img-l{display:flex;align-items:center;gap:1vw}
+.img-l img{height:11vh;width:auto;aspect-ratio:1600/902;object-fit:cover;border-radius:12px;flex:none}
+.img-l .img{flex:1}
+/* S7 : captures plus hautes, loupe sur le texte encadré */
+.of2{grid-template-rows:minmax(0,1fr) auto}
+.of2 .of-caps{display:grid;grid-template-columns:1fr 1.35fr 1fr 1fr;height:auto;min-height:0;gap:1vw}
+.of2 .of-caps .preuve{height:100%;width:100%;aspect-ratio:auto!important;position:relative;align-self:stretch}
+.of2 .of-caps .preuve > img{object-fit:cover;object-position:top center}
+.loupes{position:absolute;left:5%;right:5%;bottom:4%;display:flex;flex-direction:column;gap:.8vh}
+.loupes img{display:block;width:100%;height:auto;border:3px solid var(--rouge);border-radius:10px;box-shadow:0 8px 24px rgba(10,10,10,.35);background:#fff}
+.of2 .comp2 .comp-c{padding:.7em 1.1em;gap:.8vh}
+.of2 .comp2 .gros{font-size:clamp(18px,1.6vw,1.5rem);margin-bottom:0}
+.of2 .comp2 .ph{padding:.5em;min-height:0}
+/* S8 : cartes à la taille du nombre de logos */
+.out{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.cat{display:flex;flex-direction:column;gap:1vw;min-width:0}
+.cat .rang{display:flex;gap:1vw;flex:1;min-height:0}
+.cat .rang > div{flex:var(--n) 1 0;min-width:0;background:var(--carte);border:1px solid var(--filet);border-radius:16px;padding:.9em 1em;display:flex;flex-direction:column;gap:.9vh}
+.cat .logos{display:flex;flex-wrap:nowrap;justify-content:space-around;align-items:center;flex:1;gap:.4vw}
+.cat .logo-ph{flex:1 1 0;min-width:0;font-size:var(--fs-sm)}
+.cat .logo-ph img{height:5vh}
+.out-d{justify-content:center}
+/* S11 : liens et captures des profils */
+.marche a{color:inherit;text-decoration:none}
+.marche .prs{display:grid;grid-template-columns:repeat(var(--k,1),1fr);gap:.5vw;flex:1;min-height:0;margin-top:1vh}
+.marche .pr{display:flex;flex-direction:column;gap:.3vh;min-height:0}
+.marche .pr img{flex:1;min-height:0;width:100%;object-fit:cover;object-position:top left;border-radius:10px;border:1px solid var(--filet)}
+.marche .url{font-size:var(--fs-sm);font-weight:300;color:var(--sourdine);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.marche:nth-child(4) .url{color:rgba(255,255,255,.7)}
+.marche .pay{margin-top:1vh}
+.marche .qui-l{margin-top:.8vh}
+.marche:nth-child(1){height:70%} .marche:nth-child(2){height:80%} .marche:nth-child(3){height:90%} .marche:nth-child(4){height:100%}
+/* S12 : illustration dans le bloc noir, pilule à sa taille */
+.ia-stats .illu{background:#fff;border-radius:14px;overflow:hidden;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.ia-stats .illu img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.ia-stats > .chip{justify-self:start;font-size:var(--fs-md);padding:.45em 1.1em}
+/* correctifs de hauteur (2e série) */
+.cat > .rang{background:none;border:0;padding:0;border-radius:0;flex-direction:row;gap:1vw}
+.out{min-height:0} .cat{min-height:0}
+.cat .rang > div h3{margin:0}
+.esc{min-height:0}
+.marche{min-height:0;overflow:hidden;gap:.3vh}
+.marche b{font-size:clamp(17px,1.6vw,1.5rem)}
+.marche .chip{font-size:clamp(11px,.85vw,.8rem);padding:.25em .7em}
+.marche .prs{flex:1 1 0;min-height:0;grid-template-rows:minmax(0,1fr)}
+.marche .pr{display:grid;grid-template-rows:minmax(0,1fr) auto;min-height:0;overflow:hidden}
+.marche .pr img{height:100%}
+.marche .pr.yt img{object-position:0 78%}
+.marche .url{white-space:normal;overflow:visible;overflow-wrap:anywhere;line-height:1.25;font-size:clamp(10.5px,.8vw,.78rem)}
+.marche .pay{font-size:clamp(18px,1.7vw,1.6rem)}
+.ia{min-height:0}
+.ia-stats{grid-template-rows:minmax(0,1fr) auto auto;min-height:0}
+.ia-stats .grand{min-height:0;overflow:hidden;padding:1em 1.2em}
+.ia-stats .grand b{font-size:clamp(2.4rem,4.4vw,4rem)}
+.ia-d{grid-template-rows:auto minmax(0,1fr);min-height:0}
+.preuve.gpt{height:100%;max-height:100%;min-height:0}
+/* loupes sur les autres captures */
+.preuve{position:relative}
+.l-12{left:auto;right:4%;width:52%;bottom:auto;top:30%}
+.l-9{left:6%;right:6%;bottom:40%}
+.l-6{left:auto;right:3%;width:62%;bottom:-6%}
+.preuve.cap-aa{overflow:visible}
+/* retouches */
+.et > b{font-size:clamp(14px,1.3vw,1.25rem);max-width:100%;text-align:center}
+.img-l img{height:8.5vh}
+.page{gap:1.3vh}
+.of2 .of-caps .preuve > img{object-position:top left}
+.marche .prs[style*="--k:2"]{grid-template-columns:1fr;grid-template-rows:repeat(2,minmax(0,1fr))}
+.l-12{top:auto;bottom:6%}
+.preuve .marque{position:absolute;right:2%;top:1%;background:#fff;border-radius:999px;padding:.35em .8em;box-shadow:0 4px 14px rgba(10,10,10,.2);display:flex;align-items:center}
+.preuve .marque img{height:2.2vh;width:auto;display:block}
+.of2 .comp2{grid-template-columns:1.4fr 1.4fr .7fr;gap:1vw}
+.of2 .comp2 .comp-c{flex-direction:column;align-items:stretch;gap:.9vh;justify-content:center}
+.of2 .comp2 .gros{flex:none;writing-mode:horizontal-tb}
+.of2 .comp2 .chips{gap:.4em}
+/* loupes neutres (règle de Sofian : jamais deux cadres rouges, zoom posé à côté de l'encadré) */
+.preuve{container-type:inline-size}
+.preuve img.lp{position:absolute;z-index:3;top:calc(var(--y) * 100cqw);left:var(--x);width:var(--w);height:auto;object-fit:initial;background:#fff;border:1px solid rgba(10,10,10,.18);border-radius:10px;box-shadow:0 8px 24px rgba(10,10,10,.28)}
+.preuve img.lp.haut{transform:translateY(-100%)}
+.of2 .of-caps{grid-template-columns:1fr 1.6fr 1fr 1fr}
+.of2 .of-caps .preuve > img:not(.lp){height:auto;object-fit:initial}
+.of2 .of-caps .preuve > img:not(.lp){-webkit-mask-image:linear-gradient(to bottom,#000 88%,transparent);mask-image:linear-gradient(to bottom,#000 88%,transparent)}
+/* S5 : parcours en serpent (C à l'envers) : 1 à 4 de gauche à droite, puis 5 à 7 de droite à gauche */
+.flux.serpent{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;column-gap:0;row-gap:4vh;align-items:start;align-content:stretch;position:relative;margin-top:1vh}
+.flux.serpent .et{display:flex;flex-direction:column;align-items:center;gap:1.1vh;min-height:0;height:auto;padding:0 .6vw;z-index:1}
+.flux.serpent .et::before{display:none}
+.flux.serpent .et .rond{width:12vh;height:12vh;font-size:clamp(26px,2.8vw,2.6rem)}
+.flux.serpent .et > b{font-size:clamp(15px,1.4vw,1.35rem);min-height:0}
+.flux.serpent .et .outils{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:.5vw}
+.flux.serpent .et:nth-child(3){grid-area:1/1} .flux.serpent .et:nth-child(4){grid-area:1/2} .flux.serpent .et:nth-child(5){grid-area:1/3} .flux.serpent .et:nth-child(6){grid-area:1/4}
+.flux.serpent .et:nth-child(7){grid-area:2/4} .flux.serpent .et:nth-child(8){grid-area:2/3} .flux.serpent .et:nth-child(9){grid-area:2/2}
+.flux.serpent .trait-h{position:absolute;top:6vh;left:12.5%;width:25%;height:2px;background:var(--encre);opacity:.25}
+.flux.serpent .trait-c{position:absolute;top:6vh;left:37.5%;width:50%;height:calc(50% + 2vh);border:2px solid var(--encre);border-left:0;border-radius:0 6vh 6vh 0;opacity:.25}
+/* S11 : images entières (dézoomées), réglables avec T */
+.marche .pr img{object-fit:contain;object-position:left center;background:#fff}
+.marche:nth-child(4) .pr img{background:#fff}
+/* S12 : la capture garde le format de l'image, la loupe reste collée à la source */
+.ia-d{container-type:size}
+.preuve.gpt{height:auto;max-height:none;max-width:none;width:min(100cqw, (100cqh - 24vh) * 1.364);align-self:start;justify-self:center}
+/* S5 : parcours en C (1-2-3 en haut, 4 à droite, 5-6-7 en bas), ligne aux virages arrondis */
+.flux.c3{display:block;position:relative;flex:1;min-height:0;margin:0}
+.flux.c3::before{display:none}
+.flux.c3 svg.ligne{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:0}
+.flux.c3 svg.ligne path{fill:none;stroke:var(--encre);stroke-opacity:.28;stroke-width:2;vector-effect:non-scaling-stroke}
+.flux.c3 .et{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-6vh);width:20%;display:flex;flex-direction:column;align-items:center;gap:1vh;min-height:0;height:auto;padding:0;z-index:1}
+.flux.c3 .et::before{display:none}
+.flux.c3 .et .rond{width:12vh;height:12vh;flex:none;font-size:clamp(26px,2.8vw,2.6rem)}
+.flux.c3 .et > b,.flux.c3 .et .txt > b{font-size:clamp(15px,1.4vw,1.35rem);line-height:1.2;text-align:center;min-height:0}
+.flux.c3 .et .outils{display:flex;flex-direction:column;align-items:center;gap:.7vh;align-self:center;grid-row:auto}
+.flux.c3 .e4 .txt .outils{align-self:flex-end}
+.flux.c3 .et .logo-ph{font-size:var(--fs-md);padding:.4em .85em}
+.flux.c3 .e4{transform:translate(calc(-100% + 6vh),-50%);width:auto;flex-direction:row-reverse;align-items:center;gap:1.4vw}
+.flux.c3 .e4 .txt{display:flex;flex-direction:column;align-items:flex-end;gap:.8vh}
+.flux.c3 .e4 .txt > b{text-align:right}
+.flux.c3 .e4 .outils{align-items:flex-end}
+/* S11 : cadre net, fondu sur les bords au lieu d'une coupe franche */
+.marche .pr .cad{display:block;min-height:0;border-radius:10px;border:1px solid var(--filet);background:#fff;overflow:hidden}
+.marche .pr .cad img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border:0;border-radius:0;background:#fff}
+.marche .pr.yt .cad img{-webkit-mask-image:linear-gradient(to right,#000 86%,transparent);mask-image:linear-gradient(to right,#000 86%,transparent)}
+.marche .pr{overflow:visible}
+.marche .url{overflow:visible}
+/* S5 (retour 27/09) : bulle 4 à gauche, logos à sa droite, « Rédaction » sous la bulle */
+.flux.c3 .e4{transform:translate(-6vh,-6vh);width:auto;display:grid;grid-template-columns:12vh auto;grid-template-rows:12vh auto;column-gap:1.4vw;row-gap:1vh;flex-direction:initial;align-items:center}
+.flux.c3 .e4 .txt{display:contents}
+.flux.c3 .e4 .rond{grid-column:1;grid-row:1}
+.flux.c3 .e4 .txt > b{grid-column:1;grid-row:2;justify-self:center;white-space:nowrap;text-align:center;background:var(--fond);padding:.1em .5em;border-radius:8px}
+.flux.c3 .e4 .txt .outils{grid-column:2;grid-row:1;align-self:center;align-items:flex-start}
+/* S8 : capture cliquable, s'ouvre en grand */
+.agrandir{cursor:zoom-in}
+.visionneuse{position:fixed;inset:0;z-index:200;background:rgba(10,10,10,.82);display:none;align-items:center;justify-content:center;padding:4vh 4vw;cursor:zoom-out}
+.visionneuse.on{display:flex}
+.visionneuse img{max-width:100%;max-height:100%;border-radius:var(--r);background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+@media print{.visionneuse{display:none!important}}
+/* S9 : loupes des tarifs autorisées à dépasser du bas de la capture */
+.preuve[data-tw="capture Malt"]{overflow:visible}
+.preuve[data-tw="capture Malt"] > img:not(.lp){border-radius:var(--r)}
+/* rail : logo SEO en image (27/09) */
+.rail .mark.logo{width:3.9vh;height:auto;background:none;border-radius:0;padding:0;margin:1.4vh 0 .4vh;display:block;flex:none}
+.rail .mark.logo img{display:block;width:100%;height:auto}
+/* S15 : GoFullPage réduit à une ligne */
+.anx-ia .gfp-l{margin-top:auto;display:flex;align-items:center;gap:.6em;font-size:var(--fs-sm);color:rgba(255,255,255,.85)}
+.anx-ia .gfp-l img{height:2.2em;width:auto;border-radius:6px}
+
+@media print{
+  @page{size:1280px 720px;margin:0}
+  :root{--rail:0px}
+  .notes,.rail,.panneau{display:none!important}
+  html,body{scroll-snap-type:none}
+  section{break-inside:avoid;page-break-after:always}
+  section:last-of-type{page-break-after:auto}
+  [data-tw]{outline:0!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<nav class="rail" aria-label="Sommaire">
+  <a class="mark logo" href="#s1" title="Aller à la couverture"><img src="../assets/logos/seo-logo-sans-texte.png" alt="SEO"></a>
+  <div class="liens">
+  <a href="#s1" class="on">1</a><a href="#s2">2</a><a href="#s3">3</a><a href="#s4">4</a><a href="#s5">5</a><a href="#s6">6</a><a href="#s7">7</a><a href="#s8">8</a><a href="#s9">9</a><a href="#s10">10</a><a href="#s11">11</a><a href="#s12">12</a><a href="#s13">13</a><a href="#s14">14</a><a href="#s15">15</a>
+  </div>
+  <div class="bar"><i></i></div>
+</nav>
+<div class="panneau" id="panneau"></div>
+
+<!-- ============ 1 · COUVERTURE ============ -->
+<section id="s1">
+  <div class="fond" data-tw="image de fond"><img src="../assets/cover.jpg" alt="Un rédacteur SEO au travail devant son ordinateur"></div>
+  <div class="voile" data-tw="voile" data-op></div>
+  <div class="tw" data-tw="titre" style="--x:50%;--y:46%;--l:84%">
+    <h1>Rédacteur SEO</h1>
+    <p class="sub" data-tw="description">Écrire pour être trouvé sur Google, et maintenant cité par l'IA</p>
+  </div>
+  <p class="mention tw" data-tw="mention" style="--x:50%;--y:90.6%;--l:86%">R5.MDEE.12 · Référencement · M. Igor Perez</p>
+  <p class="meta tw" data-tw="auteurs" style="--x:50%;--y:94.4%;--l:86%">Yasmine Salhi, Foundi Ahamed &amp; Sofian Chtioui · BUT3 MDEE · IUT de Roubaix · Semaine 45</p>
+  <div class="num">1 / 15</div>
+  <div class="notes">Bonjour à tous. Aujourd'hui, on vous présente un métier du référencement naturel : rédacteur SEO.
+Et on part d'une question : ce métier, qui consiste à écrire pour être trouvé sur Google, a-t-il encore un avenir maintenant que l'IA écrit et répond à la place des sites ?</div>
+</section>
+
+<!-- ============ 2 · PROBLÉMATIQUE ET SOMMAIRE ============ -->
+<section id="s2">
+  <div class="pb">
+    <div class="pb-g">
+      <p class="pb-q" data-tw="problématique">Google répond avant les sites. <em>Que devient</em> le rédacteur SEO ?</p>
+      <div class="som" data-tw="sommaire">
+        <a href="#s3"><span class="n">01</span><b>Le métier</b><span class="p">Slides 3 à 6</span></a>
+        <a href="#s7"><span class="n">02</span><b>Compétences et outils</b><span class="p">Slides 7 et 8</span></a>
+        <a href="#s9"><span class="n">03</span><b>Emploi, salaire, carrière</b><span class="p">Slides 9 à 11</span></a>
+        <a href="#s12"><span class="n">04</span><b>L'IA et le terrain</b><span class="p">Slides 12 à 14</span></a>
+      </div>
+    </div>
+    <div class="pb-d" data-tw="capture Google">
+      <div class="preuve"><img src="../assets/google-apercu-ia-preuve.png" alt="Page de résultats Google avec un Aperçu IA au-dessus des liens, encadré en rouge"><span class="chip bleu fleche">Aperçu IA → au-dessus des liens</span></div>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Source : Google, recherche « Comment devient-on performant en SEO » (consulté le 25/09/2026), Aperçu IA affiché avant les résultats.</p>
+  <div class="num">2 / 15</div>
+  <div class="notes">Regardez cette capture : on a tapé « comment devient-on performant en SEO ». Avant le moindre lien, Google affiche un Aperçu IA qui répond directement. L'internaute a sa réponse sans cliquer.
+D'où notre question : si Google répond avant les sites, que devient quelqu'un dont le métier est d'écrire pour y apparaître ?
+On y répond en quatre temps : le métier, ses compétences et ses outils, l'emploi et la carrière, puis l'IA et ce que nous a dit un professionnel.</div>
+</section>
+
+<!-- ============ 3 · DÉFINITION ============ -->
+<section id="s3">
+  <h2 data-tw="titre">Rédacteur SEO : de quoi parle-t-on ?</h2>
+  <div class="def">
+    <div class="def-g">
+      <div class="cadre" data-tw="illustration"><img src="../assets/definition.jpg" alt="Les notions du SEO autour d'une page de résultats Google"></div>
+      <div class="methode" data-tw="méthode du cours">
+        <div class="l"><span>4 piliers</span><span class="c">Technique</span><span class="c on">Contenus</span><span class="c">UX</span><span class="c">Popularité</span></div>
+        <div class="l"><span>5 étapes</span><span class="c">Audit</span><span class="c on">Sémantique</span><span class="c on">On-site</span><span class="c">Off-site</span><span class="c">Suivi</span></div>
+      </div>
+    </div>
+    <div class="def-d">
+      <p class="def-phrase" data-tw="définition"><span class="gm">«</span> Il écrit les textes d'un site pour que <span class="bleu">Google les trouve</span> et que les internautes les lisent. <span class="gm">»</span></p>
+      <div class="chips" data-tw="intitulés"><span class="chip noir">Rédacteur web SEO</span><span class="chip">Content writer</span><span class="chip">Rédacteur-concepteur</span></div>
+      <div class="pas" data-tw="ce qu'il n'est pas">
+        <div><b>≠ Content Manager</b><span>pilote la ligne éditoriale</span></div>
+        <div><b>≠ SEO Specialist</b><span>s'occupe de la technique</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Source : Perez, I., R5.MDEE.12, support des séances 1 et 2, slides 12 et 14 (consulté le 25/09/2026). Illustration générée avec <img src="../assets/logo-gemini.svg" alt="Gemini">Gemini.</p>
+  <div class="num">3 / 15</div>
+  <div class="notes">Le rédacteur SEO écrit des contenus pensés pour deux lecteurs à la fois : l'internaute, qu'il faut intéresser, et Google, qui doit comprendre le texte pour le classer.
+On le trouve sous plusieurs noms : rédacteur web SEO, content writer, rédacteur-concepteur. Attention à ne pas le confondre avec le Content Manager, qui pilote la ligne éditoriale, ni avec le SEO Specialist, qui s'occupe plutôt de la technique.
+Si on reprend votre cours : parmi les quatre piliers du SEO, il porte celui des contenus, et dans le plan en cinq étapes, il intervient à l'étude sémantique et à l'optimisation on-site.</div>
+</section>
+
+<!-- ============ 4 · MISSIONS ============ -->
+<section id="s4">
+  <h2 data-tw="titre">Ses missions : du conseil jusqu'à l'achat</h2>
+  <div class="mis">
+    <div class="mis-c" data-tw="article">
+      <div class="tete"><b>Article de blog</b><span class="chip">S'informer · TOFU</span></div>
+      <div class="preuve"><img src="../assets/captures/04-article.png" alt="Article conseil Decathlon sur le choix des chaussures de running route, titre H2 et lien interne encadrés"><img class="lp" src="../assets/captures/04-article-z1.png" alt="Zoom sur le passage encadré" style="--y:0.819;--x:5%;--w:72%"></div>
+    </div>
+    <div class="mis-lien"><i>→</i>lien interne</div>
+    <div class="mis-c" data-tw="page catégorie">
+      <div class="tete"><b>Page catégorie</b><span class="chip">Comparer · MOFU</span></div>
+      <div class="preuve"><img src="../assets/captures/04-categorie.png" alt="Page catégorie Chaussures running de Decathlon, texte d'introduction encadré"><img class="lp" src="../assets/captures/04-categorie-z1.png" alt="Zoom sur le passage encadré" style="--y:0.3;--x:4%;--w:82%"></div>
+    </div>
+    <div class="mis-lien"><i>→</i>lien interne</div>
+    <div class="mis-c" data-tw="fiche produit">
+      <div class="tete"><b>Fiche produit</b><span class="chip noir">Acheter · BOFU</span></div>
+      <div class="preuve"><img src="../assets/captures/04-produit.png" alt="Fiche produit Asics Gel Ziruss 9 sur Decathlon, description encadrée"><img class="lp" src="../assets/captures/04-produit-z1.png" alt="Zoom sur le passage encadré" style="--y:0.338;--x:4%;--w:58%"></div>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Source : Decathlon, decathlon.fr, article conseil, catégorie « Chaussures running » et fiche Asics Gel Ziruss 9 (consulté le 26/09/2026).</p>
+  <div class="num">4 / 15</div>
+  <div class="notes">Concrètement, qu'écrit un rédacteur SEO ? Trois grands types de pages, qu'on a pris sur un même site, Decathlon, pour suivre le parcours du client. En rouge, ce que le rédacteur a écrit.
+L'article de blog attire quelqu'un qui cherche une information : c'est le haut du tunnel, le TOFU. La page catégorie l'aide à comparer, c'est le milieu. La fiche produit le fait acheter, c'est le bas du tunnel.
+Et entre les trois, ce sont les liens internes, écrits par le rédacteur, qui emmènent le lecteur du conseil jusqu'à l'achat. C'est le maillage interne vu en cours.</div>
+</section>
+
+<!-- ============ 5 · PROCESS ============ -->
+<section id="s5">
+  <h2 data-tw="titre">Le process d'un article</h2>
+  <div class="flux c3" data-tw="étapes">
+    <svg class="ligne" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M10 12 L56 12 C68.15 12 78 24.54 78 40 C78 55.46 68.15 68 56 68 L10 68"/></svg>
+    <div style="--x:10%;--y:12%" class="e1 et"><div class="rond">1</div><b>Brief</b><div class="outils"><span class="logo-ph ok">Client, objectif</span></div></div>
+    <div style="--x:33%;--y:12%" class="e2 et cle"><div class="rond">2</div><b>Mot-clé et intention</b><div class="outils"><span class="logo-ph ok"><img src="../assets/logos/semrush.svg" alt="">Semrush</span><span class="logo-ph ok"><img src="../assets/logos/google-ads.svg" alt="">Keyword Planner</span></div></div>
+    <div style="--x:56%;--y:12%" class="e3 et"><div class="rond">3</div><b>Plan en H2, H3</b><div class="outils"><span class="logo-ph ok"><img src="../assets/logos/answerthepublic.svg" alt="">AnswerThePublic</span></div></div>
+    <div style="--x:78%;--y:40%" class="e4 et cle"><div class="rond">4</div><div class="txt"><b>Rédaction</b><div class="outils"><span class="logo-ph ok"><img src="../assets/logos/antidote.svg" alt="">Antidote</span><span class="logo-ph ok"><img src="../assets/logos/chatgpt.svg" alt="">ChatGPT</span></div></div></div>
+    <div style="--x:56%;--y:68%" class="e5 et cle"><div class="rond">5</div><b>Title, meta, alt</b><div class="outils"><span class="logo-ph ok"><img src="../assets/logos/yoast.svg" alt="">Yoast</span><span class="logo-ph ok"><img src="../assets/logos/rankmath.png" alt="">Rank Math</span></div></div>
+    <div style="--x:33%;--y:68%" class="e6 et"><div class="rond">6</div><b>Liens internes</b><div class="outils"><span class="logo-ph ok"><img src="../assets/logos/wordpress.svg" alt="">WordPress</span></div></div>
+    <div style="--x:10%;--y:68%" class="e7 et"><div class="rond">7</div><b>Publication et suivi</b><div class="outils"><span class="logo-ph ok"><img src="../assets/logos/search-console-icone.svg" alt="">Search Console</span><span class="logo-ph ok"><img src="../assets/logos/ga4.svg" alt="">GA4</span></div></div>
+  </div>
+  <div class="num">5 / 15</div>
+  <div class="notes">Voici comment se fabrique un article, du brief à la publication.
+Tout part d'un brief : le client, son objectif. Ensuite, le rédacteur choisit un mot-clé et vérifie ce que l'internaute cherche vraiment derrière, c'est l'intention de recherche. Il construit un plan en titres H2 et H3, souvent à partir des questions que les gens posent. Puis il rédige, il optimise le titre, la meta description et les descriptions d'images, et il ajoute les liens internes. Enfin, il publie et il suit les résultats dans la Search Console.
+Sous chaque étape, les outils qu'il utilise.</div>
+</section>
+
+<!-- ============ 6 · AVANT / APRÈS ============ -->
+<section id="s6">
+  <h2 data-tw="titre">Avant / après : le métier en action</h2>
+  <div class="aa">
+    <div class="page avant" data-tw="avant">
+      <span class="chip rouge lbl">Avant · page réelle</span>
+      <div class="cap-l">Résultat Google</div>
+      <div class="preuve cap-aa" style="aspect-ratio:1368/284"><img src="../assets/captures/06-google-footkorner.png" alt="Résultat Google réel de Footkorner Roubaix : la description affiche les coordonnées, encadrée"></div>
+      <div class="cap-l">Code source de la page</div>
+      <div class="preuve cap-aa" style="aspect-ratio:1300/270"><img src="../assets/captures/06-code-footkorner.png" alt="Code source de la page : meta description Content is handled by Storyblok, encadrée"><img class="lp" src="../assets/captures/06-code-z1.png" alt="Zoom sur le passage encadré" style="--y:0.178;--x:30%;--w:68%"></div>
+      <div class="cap-l">Photo de la boutique</div>
+      <div class="img-l"><img src="../assets/captures/06-fk-facade.jpg" alt="Façade de la boutique Footkorner de Roubaix"><div class="img">alt : « footkorner-roubaix »</div></div>
+    </div>
+    <div class="page apres" data-tw="après">
+      <span class="chip vert lbl">Après · notre réécriture</span>
+      <div class="cap-l">Résultat Google</div>
+      <div class="serp"><div class="t"><span class="bulle">1</span>Magasin de sneakers à Roubaix : Footkorner, 28 Grande Rue</div><div class="u">footkorner.com › magasins › roubaix</div><div class="m"><span class="bulle">2</span>Sneakers et streetwear en plein centre de Roubaix. Ouvert du lundi au samedi, de 10 h à 19 h 30.</div></div>
+      <div class="cap-l">Contenu de la page</div>
+      <p class="h2"><span class="bulle">3</span>Où acheter des sneakers à Roubaix ?</p>
+      <p>Notre boutique vous accueille au 28 Grande Rue, du lundi au samedi. <span class="bulle">4</span>Découvrez nos <a>nouveautés sneakers</a> avant de passer.</p>
+      <div class="cap-l">Photo de la boutique</div>
+      <div class="img-l"><img src="../assets/captures/06-fk-facade.jpg" alt="Façade de la boutique Footkorner de Roubaix"><div class="img"><span class="bulle">5</span>alt : « façade de la boutique Footkorner, 28 Grande Rue à Roubaix »</div></div>
+    </div>
+  </div>
+  <div class="legende-aa" data-tw="légende"><span><span class="bulle">1</span>Mot-clé dans le title</span><span><span class="bulle">2</span>Meta qui donne envie de cliquer</span><span><span class="bulle">3</span>H2 sous forme de question</span><span><span class="bulle">4</span>Lien interne</span><span><span class="bulle">5</span>Image décrite</span></div>
+  <p class="pied" data-tw="source">Avant : Footkorner Roubaix, résultat Google, code source et photo de footkorner.com (consultés le 26/09/2026) ; après : réécriture du groupe.</p>
+  <div class="num">6 / 15</div>
+  <div class="notes">Pour vous montrer le métier plutôt que de le décrire, on est partis d'une vraie page trouvée sur Google : la boutique Footkorner de Roubaix, Grande Rue.
+À gauche, la page telle qu'elle est aujourd'hui. En haut, son vrai résultat sur Google : la description, ce sont juste le téléphone et l'adresse mail, qu'on a floutés. Pourquoi ? Parce que dans le code de la page, en dessous, la meta description dit « Content is handled by Storyblok » : un texte technique oublié par le site. Google ne peut pas l'afficher, alors il prend ce qu'il trouve. Et la photo de la boutique a pour texte alternatif « footkorner-roubaix » : ça ne décrit rien.
+À droite, notre réécriture. Le mot-clé « magasin de sneakers à Roubaix » est dans le titre, la description donne envie de venir, le sous-titre reprend une vraie question d'internaute, un lien interne envoie vers les produits, et la même photo est enfin décrite.
+C'est ça, le travail du rédacteur SEO : même boutique, même adresse, mais maintenant Google comprend la page, et l'internaute a une raison de cliquer.</div>
+</section>
+
+<!-- ============ 7 · CE QUE DEMANDENT LES OFFRES (compétences + offres d'emploi) ============ -->
+<section id="s7">
+  <h2 data-tw="titre">Ce que demandent les offres d'emploi</h2>
+  <div class="of2">
+    <div class="of-caps" data-tw="captures des offres">
+      <div class="preuve"><img src="../assets/captures/07-indeed.png" alt="Indeed : Rédacteur Web SEO en alternance à Faches-Thumesnil, optimisation SEO/GEO et LLM encadrées"><img class="lp haut" src="../assets/captures/07-indeed-z1.png" alt="Zoom sur le passage encadré" style="--y:0.645;--x:6%;--w:70%"><img class="lp" src="../assets/captures/07-indeed-z2.png" alt="Zoom sur le passage encadré" style="--y:0.927;--x:6%;--w:65%"></div>
+      <div class="preuve"><img src="../assets/captures/07-wttj.png" alt="Welcome to the Jungle : Content Strategist SEO et GEO chez Eskimoz, salaire et mission encadrés"><img class="lp" src="../assets/captures/07-wttj-z1.png" alt="Zoom sur le passage encadré" style="--y:0.284;--x:23%;--w:38%"><img class="lp" src="../assets/captures/07-wttj-z2.png" alt="Zoom sur le passage encadré" style="--y:0.584;--x:55%;--w:42%"></div>
+      <div class="preuve"><img src="../assets/captures/07-apec.png" alt="APEC : Content manager, salaire et exigence d'orthographe, de SEO et d'IA encadrés"><img class="lp" src="../assets/captures/07-apec-z1.png" alt="Zoom sur le passage encadré" style="--y:0.5;--x:24%;--w:50%"><img class="lp haut" src="../assets/captures/07-apec-z2.png" alt="Zoom sur le passage encadré" style="--y:1.331;--x:21%;--w:75%"></div>
+      <div class="preuve"><img src="../assets/captures/07-linkedin.png" alt="LinkedIn : Rédacteur SEO et GEO chez Hello Watt, IA, orthographe et savoir-être encadrés"><img class="lp" src="../assets/captures/07-linkedin-z1.png" alt="Zoom sur le passage encadré" style="--y:0.708;--x:20%;--w:62%"><img class="lp" src="../assets/captures/07-linkedin-z23.png" alt="Zoom sur le passage encadré" style="--y:1.056;--x:18%;--w:70%"></div>
+    </div>
+    <div class="comp2">
+      <div class="comp-c clair" data-tw="savoir-faire"><span class="gros">Savoir-faire</span><div class="chips"><span class="chip">Orthographe irréprochable</span><span class="chip">SEO on-page : title, Hn, alt</span><span class="chip">Recherche de mots-clés</span><span class="chip">Champ sémantique</span><span class="chip">WordPress, bases de HTML</span><span class="chip">Search Console</span></div></div>
+      <div class="comp-c noir" data-tw="savoir-être"><span class="gros">Savoir-être</span><div class="chips"><span class="chip">Curiosité</span><span class="chip">Rigueur</span><span class="chip">Esprit de synthèse</span><span class="chip">Adapter son ton à chaque marque</span><span class="chip">Autonomie</span></div></div>
+      <div class="ph" data-tw="citation du pro"><b>« La compétence la plus sous-estimée… »</b><span>Citation du professionnel interviewé (question 10), mot pour mot</span><span class="qui">Après l'interview</span></div>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Sources : Indeed, France Neir ; Welcome to the Jungle, Eskimoz ; APEC, Actual Talent ; LinkedIn, Hello Watt (consultés le 26/09/2026).</p>
+  <div class="num">7 / 15</div>
+  <div class="notes">Pour savoir ce qu'on attend vraiment d'un rédacteur SEO, on est allés lire de vraies offres, sur quatre sites différents.
+Sur Indeed, une alternance à Faches-Thumesnil, juste à côté : on demande d'optimiser les fiches produits pour le SEO, mais aussi pour le GEO, c'est-à-dire pour les IA. Sur Welcome to the Jungle, l'agence Eskimoz cherche un Content Strategist entre 30 et 40 000 euros, pour optimiser les contenus « pour le Search et pour les moteurs de réponse ». Sur l'APEC, un poste de Content Manager exige une très bonne orthographe et des connaissances en SEO et en IA. Et sur LinkedIn, Hello Watt recrute un rédacteur SEO et GEO qui utilise Claude, Gemini et ChatGPT au quotidien.
+Ce qui revient partout : une orthographe irréprochable, le SEO, et maintenant l'IA. Côté savoir-être, on retrouve mot pour mot la rigueur, la curiosité et l'autonomie.
+Et on a demandé au professionnel quelle compétence était, selon lui, la plus sous-estimée.</div>
+</section>
+
+<!-- ============ 8 · OUTILS ============ -->
+<section id="s8">
+  <h2 data-tw="titre">Ses outils</h2>
+  <div class="out">
+    <div class="cat" data-tw="outils par catégorie">
+      <div class="rang">
+      <div style="--n:4"><h3>Mots-clés</h3><div class="logos"><span class="logo-ph ok"><img src="../assets/logos/semrush.svg" alt="">Semrush</span><span class="logo-ph ok"><img src="../assets/logos/ahrefs.svg" alt="">Ahrefs</span><span class="logo-ph ok"><img src="../assets/logos/google-ads.svg" alt="">Keyword Planner</span><span class="logo-ph ok"><img src="../assets/logos/answerthepublic.svg" alt="">AnswerThePublic</span></div></div>
+      <div style="--n:2"><h3>Sémantique</h3><div class="logos"><span class="logo-ph ok"><img src="../assets/logos/yourtextguru.png" alt="">YourTextGuru</span><span class="logo-ph ok"><img src="../assets/logos/surferseo.svg" alt="">Surfer SEO</span></div></div>
+      </div>
+      <div class="rang">
+      <div style="--n:3"><h3>Publication</h3><div class="logos"><span class="logo-ph ok"><img src="../assets/logos/wordpress.svg" alt="">WordPress</span><span class="logo-ph ok"><img src="../assets/logos/yoast.svg" alt="">Yoast</span><span class="logo-ph ok"><img src="../assets/logos/rankmath.png" alt="">Rank Math</span></div></div>
+      <div style="--n:1"><h3>Correction</h3><div class="logos"><span class="logo-ph ok"><img src="../assets/logos/antidote.svg" alt="">Antidote</span></div></div>
+      <div style="--n:2"><h3>Suivi</h3><div class="logos"><span class="logo-ph ok"><img src="../assets/logos/search-console-icone.svg" alt="">Search Console</span><span class="logo-ph ok"><img src="../assets/logos/ga4.svg" alt="">GA4</span></div></div>
+      </div>
+      <div class="rang">
+      <div style="--n:3"><h3>IA</h3><div class="logos"><span class="logo-ph ok"><img src="../assets/logos/chatgpt.svg" alt="">ChatGPT</span><span class="logo-ph ok"><img src="../assets/logos/claude.svg" alt="">Claude</span><span class="logo-ph ok"><img src="../assets/logos/perplexity.svg" alt="">Perplexity</span></div></div>
+      </div>
+    </div>
+    <div class="out-d">
+      <div class="preuve" data-tw="capture interface"><img class="agrandir" src="../assets/captures/08-semrush.png" alt="Semrush, Keyword Overview du mot-clé rédacteur seo en France : volume 720 et difficulté 17 % encadrés"></div>
+      <span class="chip noir" data-tw="indispensable">L'outil indispensable selon le pro : <span class="manque">question 9</span></span>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Source : Semrush, Keyword Overview « rédacteur seo », France, ordinateur (consulté le 26/09/2026).</p>
+  <div class="num">8 / 15</div>
+  <div class="notes">Voici sa boîte à outils, classée par usage.
+Pour trouver les mots-clés : Semrush, Ahrefs, le Keyword Planner de Google, AnswerThePublic pour les questions des internautes. Pour enrichir le texte : YourTextGuru ou Surfer SEO, qui disent quels mots un texte doit contenir pour être complet. Pour publier : WordPress, avec une extension SEO comme Yoast ou Rank Math. Antidote pour la correction, la Search Console et Google Analytics pour le suivi.
+Et de plus en plus, l'IA.
+À droite, une vraie analyse Semrush, faite par nous : le mot-clé « rédacteur seo » est cherché 720 fois par mois en France, avec une difficulté de 17 %, donc facile à travailler. C'est exactement ce que le rédacteur regarde avant d'écrire.
+On a aussi demandé au pro quel était l'outil dont il ne pourrait pas se passer.</div>
+</section>
+
+<!-- ============ 9 · STATUTS ET FORMATION ============ -->
+<section id="s9">
+  <h2 data-tw="titre">Salarié ou freelance ?</h2>
+  <div class="st">
+    <div class="st-c sal" data-tw="salarié">
+      <span class="gros">Salarié</span>
+      <ul><li>En <b>agence</b> SEO ou de communication</li><li>Chez l'<b>annonceur</b> : e-commerce, marque</li><li>Dans un <b>média</b> en ligne</li><li>Stage et alternance possibles</li></ul>
+      <span class="plus">Stabilité · équipe · formation</span>
+    </div>
+    <div class="st-c free" data-tw="freelance">
+      <span class="gros">Freelance</span>
+      <ul><li>Plateformes : <b>Malt</b>, sites de rédaction</li><li>Payé au mot, à l'article ou à la journée</li><li>Souvent spécialisé dans une thématique</li></ul>
+      <span class="plus">Liberté · spécialisation · plusieurs clients</span>
+    </div>
+    <div class="preuve" data-tw="capture Malt" style="aspect-ratio:1136/1560;height:100%;width:auto;justify-self:center"><img src="../assets/captures/09-malt.png" alt="Malt, recherche rédacteur web seo : quatre profils, tarifs de 150 à 350 euros par jour encadrés"><span class="marque"><img src="../assets/logos/malt.svg" alt="Malt"></span><img class="lp" src="../assets/captures/09-malt-z1.png" alt="Zoom sur le tarif encadré" style="--y:0.563;--x:3.0%;--w:37%"><img class="lp" src="../assets/captures/09-malt-z2.png" alt="Zoom sur le tarif encadré" style="--y:0.563;--x:53.2%;--w:37%"><img class="lp" src="../assets/captures/09-malt-z3.png" alt="Zoom sur le tarif encadré" style="--y:1.287;--x:3.0%;--w:37%"><img class="lp" src="../assets/captures/09-malt-z4.png" alt="Zoom sur le tarif encadré" style="--y:1.287;--x:53.2%;--w:37%"></div>
+  </div>
+  <div class="acces" data-tw="accès"><b>Accès</b><span class="chip">Bac+2 à Bac+5</span><span class="chip">Communication, marketing digital, lettres</span><span class="chip">Beaucoup d'autodidactes</span></div>
+  <p class="pied" data-tw="source">Source : <img src="../assets/logos/malt-icone.png" alt="Malt">Malt, malt.fr, recherche « rédacteur web seo » (consulté le 26/09/2026).</p>
+  <div class="num">9 / 15</div>
+  <div class="notes">Deux façons d'exercer ce métier.
+En salarié : en agence, chez un annonceur, par exemple un site e-commerce, ou dans un média en ligne. C'est aussi là qu'on peut faire un stage ou une alternance.
+En freelance, sur des plateformes comme Malt : le rédacteur est payé au mot, à l'article ou à la journée, et il se spécialise souvent dans une thématique, la santé, la finance, le sport.
+À droite, une vraie recherche sur Malt : plus de 300 rédacteurs web SEO disponibles, entre 150 et 350 euros la journée.
+Pour y accéder, on voit des profils de bac+2 à bac+5 en communication ou en marketing digital, mais aussi beaucoup d'autodidactes.</div>
+</section>
+
+
+<!-- ============ 11 · RÉMUNÉRATION ============ -->
+<section id="s10">
+  <h2 data-tw="titre">Rémunération</h2>
+  <div class="rem">
+    <div class="barres" data-tw="salaires">
+      <div class="graduation"><span></span><div><span>1 500 €</span><span>2 500 €</span><span>3 500 €</span></div></div>
+      <div class="l"><b>Junior</b><div class="echelle"><div class="plage" style="--a:10%;--b:25%"></div></div><span class="val">1 700 à 2 000 €</span></div>
+      <div class="l"><b>Confirmé</b><div class="echelle"><div class="plage" style="--a:25%;--b:65%"></div></div><span class="val">2 000 à 2 800 €</span></div>
+      <div class="l"><b>Senior, content manager</b><div class="echelle"><div class="plage v" style="--a:65%;--b:100%"></div></div><span class="val vert">2 800 à 3 500 €</span></div>
+      <div class="graduation"><span></span><div><span class="gris">brut par mois, salarié</span></div></div>
+    </div>
+    <div class="fr-stats" data-tw="freelance">
+      <div class="stat noir"><b>0,04 à 0,30 €</b><span>par mot en freelance, selon le niveau et la technicité</span></div>
+      <div class="stat"><b>240 à 430 €</b><span>par jour (TJM), du débutant au senior</span></div>
+      <div class="stat"><b>40 à 120 €</b><span>un article de 800 mots</span></div>
+      <span class="chip" data-tw="le pro">Le pro : <span class="manque">question 13</span></span>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Sources : Le Goff, salaire rédacteur web SEO ; La Fabrique du Net, prix de la rédaction web 2026 ; calculer-mon-tjm.fr (consultés le 25/09/2026).</p>
+  <div class="num">10 / 15</div>
+  <div class="notes">Côté salaire, pour un salarié : entre 1 700 et 2 000 euros brut par mois pour un junior, 2 000 à 2 800 pour un confirmé, et jusqu'à 3 500 euros pour un senior ou un content manager.
+En freelance, on compte plutôt au mot : de 4 centimes pour du contenu simple à 30 centimes pour des sujets techniques comme la santé ou la finance. Soit 40 à 120 euros pour un article de 800 mots, ou 240 à 430 euros la journée.
+Ces chiffres viennent de sites spécialisés ; on les a comparés aux offres d'emploi et à ce que nous a dit le professionnel.</div>
+</section>
+
+<!-- ============ 12 · ÉVOLUTIONS ============ -->
+<section id="s11">
+  <h2 data-tw="titre">Évolutions de carrière</h2>
+  <p class="sous-t" data-tw="nouvelle voie">Nouvelle voie : <b>spécialiste GEO</b>, pour faire citer la marque par ChatGPT, Perplexity et Google.</p>
+  <div class="esc" data-tw="escalier">
+    <div class="marche"><span class="n">01</span><b>Rédacteur web SEO</b><span>Junior, stage, alternance</span>
+      <div class="qui-l"><a class="chip" href="https://www.linkedin.com/in/f-ahd/" target="_blank" rel="noopener">Foundi Ahamed · Bac+5, master référencement</a></div>
+      <div class="prs"><a class="pr" href="https://www.linkedin.com/in/f-ahd/" target="_blank" rel="noopener" data-tw="profil Foundi"><span class="cad"><img src="../assets/captures/11-foundi.png" alt="Profil LinkedIn de Foundi Ahamed"></span><span class="url">linkedin.com/in/f-ahd</span></a></div>
+      <div class="pay">1 700 à 2 000 €<small>brut par mois</small></div></div>
+    <div class="marche"><span class="n">02</span><b>Rédacteur SEO senior</b><span>Expert d'une thématique</span>
+      <div class="qui-l"><a class="chip" href="https://yellowdolphins.com/a-propos/biographie-isabelle-canivet/" target="_blank" rel="noopener">Isabelle Canivet · <i>Bien rédiger pour le Web</i></a></div>
+      <div class="prs"><a class="pr" href="https://yellowdolphins.com/a-propos/biographie-isabelle-canivet/" target="_blank" rel="noopener" data-tw="profil Canivet"><span class="cad"><img src="../assets/captures/11-canivet.png" alt="Biographie d Isabelle Canivet sur Yellow Dolphins"></span><span class="url">yellowdolphins.com</span></a></div>
+      <div class="pay">2 800 à 3 500 €<small>brut par mois</small></div></div>
+    <div class="marche"><span class="n">03</span><b>Content Manager</b><span>Responsable éditorial</span>
+      <div class="qui-l"><a class="chip" href="https://www.linkedin.com/in/annhandley/" target="_blank" rel="noopener">Ann Handley · MarketingProfs</a><a class="chip" href="https://www.youtube.com/@JoePulizzi" target="_blank" rel="noopener">Joe Pulizzi · Content Marketing Institute</a></div>
+      <div class="prs" style="--k:2"><a class="pr" href="https://www.linkedin.com/in/annhandley/" target="_blank" rel="noopener" data-tw="profil Handley"><span class="cad"><img src="../assets/captures/11-handley.png" alt="Profil LinkedIn d Ann Handley"></span><span class="url">linkedin.com/in/annhandley</span></a><a class="pr yt" href="https://www.youtube.com/@JoePulizzi" target="_blank" rel="noopener" data-tw="profil Pulizzi"><span class="cad"><img src="../assets/captures/11-pulizzi.png" alt="Chaîne YouTube de Joe Pulizzi"></span><span class="url">youtube.com/@JoePulizzi</span></a></div>
+      <div class="pay">2 500 à 5 083 €<small>brut par mois</small></div></div>
+    <div class="marche"><span class="n">04</span><b>Consultant SEO · Head of content</b><span>Stratégie, équipe, clients</span>
+      <div class="qui-l"><a class="chip" href="https://www.youtube.com/@Abondanceseo" target="_blank" rel="noopener">Olivier Andrieu · Abondance</a><a class="chip" href="https://www.youtube.com/c/LaurentBourrelly" target="_blank" rel="noopener">Laurent Bourrelly · cocon sémantique</a></div>
+      <div class="prs" style="--k:2"><a class="pr yt" href="https://www.youtube.com/@Abondanceseo" target="_blank" rel="noopener" data-tw="profil Abondance"><span class="cad"><img src="../assets/captures/11-abondance.png" alt="Chaîne YouTube Abondance"></span><span class="url">youtube.com/@Abondanceseo</span></a><a class="pr yt" href="https://www.youtube.com/c/LaurentBourrelly" target="_blank" rel="noopener" data-tw="profil Bourrelly"><span class="cad"><img src="../assets/captures/11-bourrelly.png" alt="Chaîne YouTube de Laurent Bourrelly"></span><span class="url">youtube.com/c/LaurentBourrelly</span></a></div>
+      <div class="pay">2 300 à 5 800 €<small>brut par mois</small></div></div>
+  </div>
+  <p class="pied" data-tw="source">Sources : Le Goff, salaire rédacteur web SEO ; Journal du Net, salaire digital content manager ; Axio Formation, salaire consultant SEO (consultés le 26/09/2026).</p>
+  <div class="num">11 / 15</div>
+  <div class="notes">Le métier offre une vraie progression. On commence rédacteur web, souvent en stage ou en alternance. On devient senior en se spécialisant dans une thématique. Ensuite, on peut passer Content Manager, c'est-à-dire piloter toute la ligne éditoriale, puis consultant SEO ou responsable des contenus d'une entreprise.
+Et une voie nouvelle s'ouvre avec l'IA : le GEO, le fait d'optimiser des contenus pour qu'ils soient cités par ChatGPT, Perplexity ou les Aperçus IA de Google. C'est une compétence que les entreprises commencent à chercher.
+Sur chaque marche, on a mis le salaire et un nom connu du métier. En bas, notre camarade Foundi, qui prépare déjà son bac+5 en référencement. Ensuite Isabelle Canivet, l'autrice de « Bien rédiger pour le Web ». Côté contenu, Ann Handley et Joe Pulizzi. Et tout en haut, Olivier Andrieu, le fondateur d'Abondance, et Laurent Bourrelly, connu pour le cocon sémantique. Sous chaque nom, l'endroit où suivre leur contenu : LinkedIn, leur site ou leur chaîne YouTube.
+[Après l'interview : ce que le pro a vu comme évolutions autour de lui, question 19.]</div>
+</section>
+
+<!-- ============ 13 · L'IA ============ -->
+<section id="s12">
+  <h2 data-tw="titre">L'IA : menace ou mutation ?</h2>
+  <div class="ia">
+    <div class="ia-stats" data-tw="chiffres">
+      <div class="grand"><div class="illu"><img src="../assets/captures/12-ia-google.jpg" alt="Illustration : un robot IA montre l Aperçu IA de Google"></div><div><b>64,8 %</b><span>des recherches Google se terminent sans aucun clic (2026)</span></div></div>
+      <div class="duo"><div class="stat"><b>93 %</b><span>sans clic sur Perplexity</span></div><div class="stat"><b>−18 %</b><span>de clics quand un Aperçu IA s'affiche</span></div></div>
+      <span class="chip rouge">Mars 2026 : Google pénalise le contenu générique</span>
+    </div>
+    <div class="ia-d">
+      <div class="vs" data-tw="IA vs rédacteur">
+        <div><b>Ce que l'IA fait vite</b><ul><li>Un premier jet</li><li>Des idées de plan</li><li>Des reformulations</li><li>Des meta descriptions</li></ul></div>
+        <div class="g"><b class="vert">Ce que le rédacteur SEO garde</b><ul><li>L'angle et le ton</li><li>La vérification des faits</li><li>L'expérience vécue (E-E-A-T)</li><li>Écrire pour être cité (GEO)</li></ul></div>
+      </div>
+      <div class="preuve gpt" data-tw="capture IA"><img src="../assets/captures/12-chatgpt.png" alt="Réponse de ChatGPT à la question Quelles compétences pour être rédacteur SEO en 2026, source Google for Developers encadrée"><img class="lp" src="../assets/captures/12-chatgpt-z1.png" alt="Zoom sur le passage encadré" style="--y:0.338;--x:26.5%;--w:30%"></div>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Sources : Digital Applied, zero-click search statistics 2026 ; Evertune, March 2026 Core Update (consultés le 26/09/2026). Réponse de <img src="../assets/logos/chatgpt.svg" alt="ChatGPT">ChatGPT à notre question ; illustration : Pinterest.</p>
+  <div class="num">12 / 15</div>
+  <div class="notes">Revenons à notre question de départ. En 2026, près de deux recherches Google sur trois se terminent sans aucun clic, et 93 % sur Perplexity. Quand un Aperçu IA s'affiche, les sites perdent en moyenne 18 % de leurs clics.
+Mais en mars 2026, Google a aussi pénalisé les contenus génériques, ceux que n'importe qui, ou n'importe quelle IA, aurait pu écrire.
+Donc l'IA fait très bien le premier jet, les idées de plan, les reformulations. Mais le rédacteur garde ce qui fait la différence : l'angle, la vérification, l'expérience vécue, et désormais l'art d'écrire des contenus assez fiables pour être cités par les IA elles-mêmes.
+À droite, on a posé la question à ChatGPT : sa réponse s'appuie sur une source, Google for Developers, encadrée en rouge. C'est exactement ça, être cité par une IA.</div>
+</section>
+
+<!-- ============ 14 · THÉORIE VS TERRAIN ============ -->
+<section id="s13">
+  <h2 data-tw="titre">Théorie vs terrain</h2>
+  <div class="tvt">
+    <table data-tw="tableau des écarts">
+      <thead><tr><th>Thème</th><th>Ce que disent les fiches métiers</th><th>Ce que dit le pro</th><th>Écart</th></tr></thead>
+      <tbody>
+        <tr><td>Missions</td><td>Articles, fiches produits, pages catégories</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
+        <tr><td>Outils</td><td>Semrush, YourTextGuru, WordPress, Search Console</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
+        <tr><td>Salaire débutant</td><td>1 700 à 2 000 € brut par mois</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
+        <tr><td>L'IA</td><td>Un assistant, pas un remplaçant</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
+        <tr><td>Évolution</td><td>Content Manager, consultant, GEO</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="pied" data-tw="source">Interview semi-directive d'un professionnel de la rédaction SEO, anonymisé, le <span class="manque">JJ/MM/2026</span> (enregistrement audio disponible).</p>
+  <div class="num">13 / 15</div>
+  <div class="notes">Pour finir notre enquête, on a confronté ce qu'on avait trouvé dans les fiches métiers à ce que nous a dit un professionnel, le patron d'une entreprise qui pratique la rédaction SEO au quotidien.
+[À compléter après l'interview : là où il confirme, et surtout là où il nous a surpris.]</div>
+</section>
+
+<!-- ============ 15 · CONCLUSION ============ -->
+<section id="s14">
+  <!-- S14 (réf. : rangée de blocs pleins, « Results & Benefits ») -->
+  <h2 data-tw="titre">L'IA écrit le premier jet.<br><span style="color:var(--tenu)">Le rédacteur SEO décide de ce qui est publié.</span></h2>
+  <div class="fin">
+    <div class="fin-blocs" data-tw="ce qu'on retient">
+      <div class="e"><span class="k">−18 %</span><div><b>Moins de clics</b><span>Des lecteurs plus qualifiés</span></div></div>
+      <div class="b"><span class="k">E-E-A-T</span><div><b>L'IA rédige vite</b><span>L'humain vérifie, choisit l'angle, apporte son vécu</span></div></div>
+      <div class="v"><span class="k">GEO</span><div><b>Être cité par les IA</b><span>Le GEO, nouveau terrain du métier</span></div></div>
+    </div>
+    <div class="ph" data-tw="ce que ça nous a appris"><b>Ce que ce travail nous a appris</b><span>Une phrase du groupe, après l'interview</span><span class="qui">À écrire ensemble</span></div>
+  </div>
+  <p class="pied" data-tw="source">Source : Digital Applied, zero-click search statistics 2026 (consulté le 26/09/2026).</p>
+  <div class="num">14 / 15</div>
+  <div class="notes">Alors, que devient le rédacteur SEO quand Google répond avant les sites ?
+Notre réponse tient en trois blocs. D'abord, il y a moins de clics : 18 % de moins quand un Aperçu IA s'affiche. Mais ceux qui cliquent encore sont des lecteurs plus qualifiés.
+Ensuite, l'IA rédige vite, mais il y a un cadre que Google met en avant pour juger la qualité d'un contenu : le E-E-A-T. Ça veut dire Experience, Expertise, Autorité et Fiabilité. Autrement dit : l'auteur a-t-il vécu ce dont il parle, s'y connaît-il, est-il reconnu, et peut-on lui faire confiance ? Ce n'est pas un facteur de classement direct, c'est ce que Google cherche à repérer. Et l'expérience vécue, seul un humain peut l'apporter : il vérifie, il choisit l'angle, il raconte ce qu'il a vécu.
+Et enfin, un nouveau terrain s'ouvre : le GEO, écrire pour être cité par les IA elles-mêmes.
+Donc l'IA écrit le premier jet, mais c'est le rédacteur qui décide de ce qui est publié. Merci de nous avoir écoutés.</div>
+</section>
+
+<!-- ============ ANNEXE ============ -->
+<section id="s15">
+  <h2 data-tw="titre">Annexe : sources et outils utilisés</h2>
+  <div class="anx">
+    <div class="anx-c" data-tw="sources">
+      <ol class="apa">
+        <li><span class="r">Perez, I. (2026). <i>R5.MDEE.12 Référencement, support des séances 1 et 2</i> (slides 12, 14 et 20). IUT de Lille. Moodle.</span></li>
+        <li><span class="r">Perez, I. (2026). <i>R5.MDEE.12 Référencement, syllabus</i>. IUT de Lille. Moodle.</span></li>
+        <li><span class="r">Charansol, M. et Prat, M. <i>Référencement de votre site web</i> (7e éd.). ENI. Livre de référence du cours.</span></li>
+        <li><span class="r">Google. (2026). <i>Recherche « Comment devient-on performant en SEO »</i>, Aperçu IA. 25/09/2026.</span></li>
+        <li><span class="r">Decathlon. (2026). <i>Article conseil, catégorie « Chaussures running », fiche Asics Gel Ziruss 9</i>. decathlon.fr. 26/09/2026.</span></li>
+        <li><span class="r">Footkorner. (2026). <i>Footkorner Roubaix</i>, page et résultat Google. footkorner.com. 26/09/2026.</span></li>
+        <li><span class="r">Indeed, Welcome to the Jungle, APEC, LinkedIn. (2026). <i>Offres France Neir, Eskimoz, Actual Talent, Hello Watt</i>. 26/09/2026.</span></li>
+        <li><span class="r">Semrush. (2026). <i>Keyword Overview « rédacteur seo », France</i>. semrush.com. 26/09/2026.</span></li>
+        <li><span class="r">Malt. (2026). <i>Recherche « rédacteur web seo »</i>. malt.fr. 26/09/2026.</span></li>
+        <li><span class="r">Le Goff, S. (2026). <i>Salaire rédacteur web : combien gagne un rédacteur SEO en 2026 ?</i> solennlegoff.fr. 25/09/2026.</span></li>
+        <li><span class="r">La Fabrique du Net. (2026). <i>Prix rédaction web 2026</i>. lafabriquedunet.fr. 25/09/2026.</span></li>
+        <li><span class="r">Calculer mon TJM. (2026). <i>TJM rédacteur web / SEO freelance</i>. calculer-mon-tjm.fr. 25/09/2026.</span></li>
+        <li><span class="r">Journal du Net. (2026). <i>Salaire digital content manager</i>. journaldunet.com. 26/09/2026.</span></li>
+        <li><span class="r">Axio Formation. (2026, 30 juin). <i>Salaire consultant SEO en France 2026</i>. axio-formation.com. 26/09/2026.</span></li>
+        <li><span class="r">Digital Applied. (2026, 5 avril). <i>Zero-click search statistics 2026</i>. digitalapplied.com. 26/09/2026.</span></li>
+        <li><span class="r">Evertune. (2026). <i>Google's March 2026 Core Update</i>. evertune.ai. 25/09/2026.</span></li>
+        <li><span class="r">OpenAI. (2026). <i>ChatGPT, « Quelles compétences pour être rédacteur SEO en 2026 ? »</i>. Conversation du groupe. 26/09/2026.</span></li>
+        <li><span class="r">LinkedIn, YouTube, Yellow Dolphins. (2026). <i>Profils de F. Ahamed, I. Canivet, A. Handley, J. Pulizzi, O. Andrieu, L. Bourrelly</i>. 26/09/2026.</span></li>
+        <li><span class="r">Pinterest. (s. d.). <i>Illustration de l'Aperçu IA de Google</i> (slide 12). pinterest.com. 26/09/2026.</span></li>
+        <li class="a-completer"><span class="r"><i>Interview d'un professionnel de la rédaction SEO</i>, anonymisé : date à compléter.</span></li>
+      </ol>
+    </div>
+    <div class="anx-ia" data-tw="IA et outils">
+      <h3>L'IA, avec du recul</h3>
+      <div><div class="qui"><img src="../assets/logo-claude.svg" alt="">Ce que Claude a fait</div>
+        <ul><li>Les recherches</li><li>Proposé la répartition du travail</li><li>Conçu les slides</li></ul></div>
+      <div><div class="qui">Sa limite</div>
+        <ul><li>L'interview</li><li>L'approche réflexive personnelle</li></ul></div>
+      <div><div class="qui"><img src="../assets/logo-chatgpt.svg" alt=""><img src="../assets/logo-gemini.svg" alt="">ChatGPT et Gemini</div>
+        <ul><li>Les illustrations des slides 1 et 3</li></ul></div>
+    </div>
+  </div>
+  <p class="pied" data-tw="mention">Yasmine Salhi, Foundi Ahamed &amp; Sofian Chtioui · BUT3 MDEE · IUT de Roubaix · Semaine 45</p>
+  <div class="num">15 / 15</div>
+  <div class="notes">Toutes nos sources sont ici, ainsi que la façon dont on a utilisé l'IA.
+On s'est servis de Claude pour chercher et recouper les chiffres, et pour concevoir les slides. Mais il ne remplace pas le terrain : les salaires, on les a vérifiés sur de vraies offres, et le métier, on l'a confronté à un professionnel. Toutes les captures ont été prises en vrai, et on a encadré en rouge ce qui prouve chaque chiffre.</div>
+</section>
+
+<div class="visionneuse" id="visionneuse"><img alt=""></div>
+<script>
+/* logo IUT sur chaque slide */
+const secs=[...document.querySelectorAll('section')];
+secs.forEach(s=>s.insertAdjacentHTML('afterbegin','<img class="lg-i" data-tw="logo IUT" src="../assets/logo-iut.png" alt="IUT de Lille, site de Roubaix">'));
+
+/* ---------- mode réglage (touche T) ----------
+   Chaque bloc marqué data-tw se règle : position, largeur, hauteur, zoom et cadrage de son image,
+   taille du texte, opacité (voile). Les valeurs validées se collent dans REGLAGES, clé « slide|nom ». */
+const REGLAGES={};
+let perso={}; try{perso=JSON.parse(localStorage.getItem('reglages-redac-seo-1')||'{}')}catch(e){perso={}}
+function sauver(){try{localStorage.setItem('reglages-redac-seo-1',JSON.stringify(perso))}catch(e){}}
+const panneau=document.getElementById('panneau');
+let vise=null, i=0;
+const enReglage=()=>document.body.classList.contains('reglage');
+const cle=el=>el.closest('section').id+'|'+el.dataset.tw;
+const imgDe=el=>{if(el.tagName==='IMG')return el;
+  const c=[...el.querySelectorAll('img')].filter(m=>m.closest('[data-tw]')===el);
+  return c.sort((a,b)=>b.offsetWidth*b.offsetHeight-a.offsetWidth*a.offsetHeight)[0]||null;};
+let modeCadre=false;
+const tous=[...document.querySelectorAll('[data-tw]')];
+tous.forEach(el=>{el._s0=el.getAttribute('style')||''; const m=imgDe(el); if(m&&m!==el) m._s0=m.getAttribute('style')||'';});
+function valeurs(el){const k=cle(el);return Object.assign({},REGLAGES[k]||{},perso[k]||{});}
+function appliquer(el){
+  el.setAttribute('style',el._s0); const m=imgDe(el); if(m&&m!==el) m.setAttribute('style',m._s0);
+  const v=valeurs(el);
+  if(v.dx||v.dy) el.style.translate=`${v.dx||0}vw ${v.dy||0}vh`;
+  if(v.w!=null) el.style.width=v.w+'vw';
+  if(v.h!=null) el.style.height=v.h+'vh';
+  if(v.fs!=null) el.style.fontSize=v.fs+'vw';
+  if(v.op!=null) el.style.opacity=v.op;
+  if(m){ if(v.z!=null) m.style.scale=v.z;
+    if(v.ox!=null){const p=`${v.ox}% ${v.oy}%`; m.style.objectPosition=p; m.style.transformOrigin=p;}}
+}
+const r2=x=>Math.round(x*100)/100, borne=x=>Math.max(0,Math.min(100,x));
+function lire(el,n){
+  const v=valeurs(el); if(v[n]!=null) return v[n];
+  const m=imgDe(el);
+  if(n==='dx'||n==='dy') return 0;
+  if(n==='w') return r2(el.offsetWidth/innerWidth*100);
+  if(n==='h') return r2(el.offsetHeight/innerHeight*100);
+  if(n==='fs') return r2(parseFloat(getComputedStyle(el).fontSize)/innerWidth*100);
+  if(n==='op') return parseFloat(getComputedStyle(el).opacity);
+  if(n==='z') return m?(parseFloat(getComputedStyle(m).scale)||1):1;
+  if(!m) return 50;
+  const p=getComputedStyle(m).objectPosition.split(' '), q=n==='ox'?p[0]:p[1];
+  return q&&q.includes('%')?parseFloat(q):50;
+}
+function modif(el,ch){const k=cle(el); perso[k]=Object.assign({},perso[k]||{},ch); sauver(); appliquer(el); ecrire();}
+function choisir(el){if(vise)vise.classList.remove('vise'); vise=el; if(el)el.classList.add('vise'); ecrire();}
+function ecrire(){
+  if(!enReglage())return;
+  const els=[...secs[i].querySelectorAll('[data-tw]')];
+  const noms={dx:'x',dy:'y',w:'larg.',h:'haut.',z:'zoom',ox:'cadr.x',oy:'cadr.y',fs:'texte',op:'opac.'};
+  const im=vise&&imgDe(vise);
+  const barre=vise?`<div class="outils-r"><div class="t">Bloc choisi : <b>${vise.dataset.tw}</b></div>`
+    +(im?`<div><span>Zoom image</span><button data-a="z-">−</button><button data-a="z+">+</button></div>
+      <div><span>Cadrer l'image</span><button data-a="cg">←</button><button data-a="cd">→</button><button data-a="ch">↑</button><button data-a="cb">↓</button></div>`
+      :`<div><span>Taille du texte</span><button data-a="z-">−</button><button data-a="z+">+</button></div>`)
+    +`<div><span>Largeur</span><button data-a="l-">−</button><button data-a="l+">+</button><span>Hauteur</span><button data-a="h-">−</button><button data-a="h+">+</button></div>
+      <div><span>Glisser la souris</span><button data-a="mode" class="${modeCadre?'':'on'}">déplace le bloc</button><button data-a="mode" class="${modeCadre?'on':''}">recadre l'image</button></div>
+      <div><button data-a="0">Remettre ce bloc à zéro</button></div></div>`:'';
+  panneau.innerHTML='<b>Réglages · slide '+(i+1)+'</b>'+barre+els.map((el,j)=>{
+    const v=valeurs(el), t=Object.entries(v).map(([a,b])=>(noms[a]||a)+' '+b).join(' · ')||'·';
+    return `<div class="l${el===vise?' vise':''}" data-j="${j}"><span>${el.dataset.tw}</span><span>${t}</span></div>`;}).join('')
+    +'<div class="aide">Clic sur un bloc ou dans cette liste : le choisir · Maj+clic : bloc parent<br>Glisser ou flèches : déplacer · R : glisser pour recadrer l\'image<br>Molette ou + et − : zoom de l\'image (taille du texte s\'il n\'y a pas d\'image)<br>Alt+glisser ou Alt+flèches : cadrer l\'image · Maj+flèches : largeur et hauteur<br>Retour arrière : remettre le bloc à zéro · Échap : désélectionner<br>C : copier tous les réglages · P : panneau à gauche ou à droite · T : sortir</div>';
+  panneau.querySelectorAll('.l').forEach(r=>r.onclick=()=>choisir(els[+r.dataset.j]));
+  panneau.querySelectorAll('button[data-a]').forEach(b=>b.onclick=()=>action(b.dataset.a));
+}
+function zoomer(s){
+  if(!vise)return;
+  if(vise.hasAttribute('data-op')) modif(vise,{op:Math.max(0,Math.min(1,r2(lire(vise,'op')+.05*s)))});
+  else if(imgDe(vise)) modif(vise,{z:Math.max(.2,Math.round(lire(vise,'z')*(s>0?1.04:1/1.04)*1000)/1000)});
+  else modif(vise,{fs:Math.round(lire(vise,'fs')*(s>0?1.04:1/1.04)*1000)/1000});
+}
+function cadrer(n,d){const o=n==='ox'?'oy':'ox'; modif(vise,{[n]:borne(lire(vise,n)+d),[o]:lire(vise,o)});}
+function action(a){
+  if(!vise)return;
+  const t={'z+':()=>zoomer(1),'z-':()=>zoomer(-1),cg:()=>cadrer('ox',-3),cd:()=>cadrer('ox',3),ch:()=>cadrer('oy',-3),cb:()=>cadrer('oy',3),
+    'l+':()=>modif(vise,{w:r2(lire(vise,'w')+1)}),'l-':()=>modif(vise,{w:r2(lire(vise,'w')-1)}),
+    'h+':()=>modif(vise,{h:r2(lire(vise,'h')+1)}),'h-':()=>modif(vise,{h:r2(lire(vise,'h')-1)}),
+    mode:()=>{modeCadre=!modeCadre;ecrire();},'0':()=>{delete perso[cle(vise)];sauver();appliquer(vise);ecrire();}};
+  if(t[a])t[a]();
+}
+addEventListener('wheel',e=>{
+  if(!enReglage()||!vise||!vise.contains(e.target))return;
+  e.preventDefault(); zoomer(e.deltaY<0?1:-1);
+},{passive:false});
+function suivre(f){const mv=e=>f(e),up=()=>{removeEventListener('mousemove',mv);removeEventListener('mouseup',up)};addEventListener('mousemove',mv);addEventListener('mouseup',up);}
+addEventListener('mousedown',ev=>{
+  if(!enReglage()||ev.target.closest('.panneau'))return;
+  let el=ev.target.closest('[data-tw]'); if(!el)return;
+  if(ev.shiftKey){const p=el.parentElement&&el.parentElement.closest('[data-tw]'); if(p) el=p;}
+  ev.preventDefault(); choisir(el);
+  const x0=ev.clientX,y0=ev.clientY;
+  if((ev.altKey||modeCadre)&&imgDe(el)){
+    const ox0=lire(el,'ox'),oy0=lire(el,'oy'),r=el.getBoundingClientRect();
+    suivre(e=>modif(el,{ox:r2(borne(ox0-(e.clientX-x0)/r.width*100)),oy:r2(borne(oy0-(e.clientY-y0)/r.height*100))})); return;
+  }
+  const dx0=lire(el,'dx'),dy0=lire(el,'dy');
+  suivre(e=>modif(el,{dx:r2(dx0+(e.clientX-x0)/innerWidth*100),dy:r2(dy0+(e.clientY-y0)/innerHeight*100)}));
+});
+addEventListener('click',e=>{if(enReglage()&&!e.target.closest('.panneau')&&e.target.closest('[data-tw]'))e.preventDefault();},true);
+function copier(t){
+  if(navigator.clipboard&&navigator.clipboard.writeText) return navigator.clipboard.writeText(t).catch(()=>vieux(t));
+  vieux(t);
+}
+function vieux(t){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();}
+tous.forEach(el=>{if(Object.keys(valeurs(el)).length) appliquer(el);});
+
+/* ---------- notes orateur modifiables (touche N) : clic pour écrire, Échap pour sortir, C pour tout copier ---------- */
+const CLE_N='notes-redac-seo-1-fr';
+let notesPerso={}; try{notesPerso=JSON.parse(localStorage.getItem(CLE_N)||'{}')}catch(e){notesPerso={}}
+const sauverNotes=()=>{try{localStorage.setItem(CLE_N,JSON.stringify(notesPerso))}catch(e){}};
+const notesEls=[...document.querySelectorAll('section .notes')];
+notesEls.forEach(n=>{const id=n.closest('section').id; n._orig=n.innerText.trim(); n.contentEditable='true'; n.spellcheck=true; n.dataset.aide='Clic pour modifier · Échap pour sortir · C pour copier';
+  if(notesPerso[id]!=null){ if(notesPerso[id]===n._orig) delete notesPerso[id]; else n.innerText=notesPerso[id]; }
+  n.addEventListener('input',()=>{const t=n.innerText.trim(); if(t===n._orig) delete notesPerso[id]; else notesPerso[id]=t; sauverNotes();});
+});
+sauverNotes();
+const toast=document.createElement('div'); toast.className='toast'; document.body.appendChild(toast);
+function prevenir(t){toast.textContent=t; toast.classList.add('on'); clearTimeout(prevenir._t); prevenir._t=setTimeout(()=>toast.classList.remove('on'),2200);}
+function toutCopier(){
+  const tout=Object.assign({},REGLAGES); for(const c in perso) tout[c]=Object.assign({},REGLAGES[c]||{},perso[c]);
+  notesEls.forEach(n=>{const sec=n.closest('section'), id=sec.id; if(notesPerso[id]!=null) tout['notes|'+id+' (slide '+(secs.indexOf(sec)+1)+')']=notesPerso[id];});
+  copier(JSON.stringify(tout,null,1));
+  const nb=Object.keys(notesPerso).length;
+  prevenir('Copié : réglages'+(nb?' + '+nb+' note(s) modifiée(s)':''));
+}
+
+/* ---------- visionneuse : une capture .agrandir s'ouvre en grand au clic ---------- */
+const vis=document.getElementById('visionneuse');
+document.querySelectorAll('img.agrandir').forEach(im=>im.addEventListener('click',e=>{ if(enReglage())return; e.stopPropagation(); vis.querySelector('img').src=im.src; vis.classList.add('on'); }));
+vis.addEventListener('click',()=>vis.classList.remove('on'));
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&vis.classList.contains('on')){ vis.classList.remove('on'); e.stopImmediatePropagation(); } },true);
+
+/* ---------- navigation ---------- */
+const liens=[...document.querySelectorAll('.rail .liens a[href^="#s"]')];
+const barre=document.querySelector('.rail .bar i');
+function maj(){
+  secs.forEach((s,k)=>s.classList.toggle('ici',k===i));
+  liens.forEach((a,k)=>a.classList.toggle('on',k===i));
+  if(barre) barre.style.height=((i+1)/secs.length*100)+'%';
+  ecrire();
+}
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){i=secs.indexOf(e.target);maj();}})},{threshold:.6});
+secs.forEach(s=>io.observe(s));
+maj();
+function aller(n){i=Math.max(0,Math.min(secs.length-1,n));secs[i].scrollIntoView({behavior:'smooth'});}
+addEventListener('keydown',e=>{
+  const k=e.key;
+  if(document.activeElement&&document.activeElement.classList&&document.activeElement.classList.contains('notes')){ if(k==='Escape'){e.preventDefault();document.activeElement.blur();} return; }
+  if(document.activeElement&&document.activeElement.isContentEditable)return;
+  if(enReglage()&&vise){
+    if(k.startsWith('Arrow')){
+      e.preventDefault();
+      const hz=k==='ArrowLeft'||k==='ArrowRight', s=(k==='ArrowRight'||k==='ArrowDown')?1:-1;
+      if(e.altKey&&imgDe(vise)){const n=hz?'ox':'oy',o=hz?'oy':'ox'; modif(vise,{[n]:borne(lire(vise,n)+2*s),[o]:lire(vise,o)});}
+      else if(e.shiftKey){ if(hz) modif(vise,{w:r2(lire(vise,'w')+.5*s)}); else modif(vise,{h:r2(lire(vise,'h')+.5*s)}); }
+      else {const n=hz?'dx':'dy'; modif(vise,{[n]:r2(lire(vise,n)+.25*s)});}
+      return;
+    }
+    if(k==='+'||k==='='||k==='-'||k==='_'){e.preventDefault(); zoomer((k==='+'||k==='=')?1:-1); return;}
+    if(k==='r'||k==='R'){modeCadre=!modeCadre; ecrire(); return;}
+    if(k==='Backspace'||k==='Delete'){e.preventDefault(); delete perso[cle(vise)]; sauver(); appliquer(vise); ecrire(); return;}
+    if(k==='Escape'){choisir(null);return;}
+  }
+  if(k==='t'||k==='T'){document.body.classList.toggle('reglage'); if(!enReglage())choisir(null); else ecrire(); return;}
+  if((k==='c'||k==='C')&&!e.metaKey&&!e.ctrlKey){toutCopier(); const a=panneau.querySelector('.aide'); if(enReglage()&&a) a.textContent='Réglages et notes copiés : colle-les dans la conversation.'; return;}
+  if((k==='p'||k==='P')&&enReglage()){panneau.classList.toggle('gauche');return;}
+  if(k==='n'||k==='N'){document.body.classList.toggle('notesvues');return;}
+  if(['ArrowDown','PageDown',' '].includes(k)){e.preventDefault();aller(i+1);}
+  else if(['ArrowUp','PageUp'].includes(k)){e.preventDefault();aller(i-1);}
+  else if(k==='Home'){e.preventDefault();aller(0);}
+  else if(k==='End'){e.preventDefault();aller(secs.length-1);}
+});
+</script>
+</body>
+</html>
