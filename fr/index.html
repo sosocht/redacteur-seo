@@ -75,6 +75,16 @@ strong,b{font-weight:600}
 .ph b{font-size:var(--fs-md);font-weight:700}
 .ph span{font-size:var(--fs-sm);color:var(--sourdine);margin-top:.35em;max-width:32ch}
 .ph .qui{margin-top:.8em;font-size:var(--fs-sm);font-weight:600;color:var(--bleu)}
+/* citation de la professionnelle interviewée */
+.cit{border-radius:var(--r);background:var(--bleu);color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:.8vh;padding:.9em 1.1em;min-width:0}
+.cit q{quotes:none;font-size:var(--fs-md);font-weight:500;line-height:1.25;letter-spacing:-.01em}
+.cit span{font-size:var(--fs-sm);font-weight:600;opacity:.85}
+.stat.bleu{background:var(--bleu);border-color:var(--bleu);color:#fff} .stat.bleu span{color:rgba(255,255,255,.85)}
+.cit-evo{position:absolute;left:6.5vw;top:21.5vh;width:46vw;z-index:2;padding:.7em 1em}
+.cit-evo q{font-size:clamp(15px,1.3vw,1.25rem)}
+.nous{border-radius:var(--r);background:var(--carte);border:1px solid var(--filet);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.6vh;padding:1.2vh 2vw;min-height:12vh}
+.nous b{font-size:var(--fs-sm);font-weight:600;color:var(--bleu)}
+.nous q{quotes:none;font-size:clamp(16px,1.55vw,1.5rem);font-weight:500;letter-spacing:-.01em;line-height:1.25;max-width:70ch}
 .cadre{border-radius:var(--r);overflow:hidden;border:1px solid var(--filet);background:#111;min-height:0;position:relative}
 .cadre img{width:100%;height:100%;object-fit:cover;display:block}
 
@@ -272,6 +282,11 @@ td.vide{color:var(--tenu)}
 .tvt td,.tvt th{padding:.75em 1em}
 .tvt td:first-child{font-weight:600;width:15%}
 .tvt td.ecart{text-align:center;width:9%;font-size:var(--fs-chiffre);font-weight:600;color:var(--tenu)}
+.tvt td.ok{color:var(--vert)} .tvt td.diff{color:var(--rouge)} .tvt td.pres{color:var(--encre)}
+.tvt td:nth-child(2){width:27%} .tvt td:nth-child(3){width:49%}
+.tvt td.ecart{font-size:1.6rem;padding:.15em .5em}
+.leg{display:flex;justify-content:flex-end;gap:1.4em;margin-top:1.4vh;font-size:var(--fs-sm);color:var(--sourdine)}
+.leg b{font-size:1.2rem;margin-right:.3em;color:var(--encre)} .leg .ok{color:var(--vert)} .leg .diff{color:var(--rouge)}
 
 /* ============ S15 · CONCLUSION ============ */
 #s14{background:var(--encre);color:#fff}
@@ -753,15 +768,15 @@ C'est ça, le travail du rédacteur SEO : même boutique, même adresse, mais ma
     <div class="comp2">
       <div class="comp-c clair" data-tw="savoir-faire"><span class="gros">Savoir-faire</span><div class="chips"><span class="chip">Orthographe irréprochable</span><span class="chip">SEO on-page : title, Hn, alt</span><span class="chip">Recherche de mots-clés</span><span class="chip">Champ sémantique</span><span class="chip">WordPress, bases de HTML</span><span class="chip">Search Console</span></div></div>
       <div class="comp-c noir" data-tw="savoir-être"><span class="gros">Savoir-être</span><div class="chips"><span class="chip">Curiosité</span><span class="chip">Rigueur</span><span class="chip">Esprit de synthèse</span><span class="chip">Adapter son ton à chaque marque</span><span class="chip">Autonomie</span></div></div>
-      <div class="ph" data-tw="citation du pro"><b>« La compétence la plus sous-estimée… »</b><span>Citation du professionnel interviewé (question 10), mot pour mot</span><span class="qui">Après l'interview</span></div>
+      <div class="cit" data-tw="citation du pro"><q>« Il faut avant tout avoir une bonne maîtrise de la langue française »</q><span>La rédactrice SEO interviewée</span></div>
     </div>
   </div>
-  <p class="pied" data-tw="source">Sources : Indeed, France Neir ; Welcome to the Jungle, Eskimoz ; APEC, Actual Talent ; LinkedIn, Hello Watt (consultés le 26/09/2026).</p>
+  <p class="pied" data-tw="source">Sources : Indeed, France Neir ; Welcome to the Jungle, Eskimoz ; APEC, Actual Talent ; LinkedIn, Hello Watt (consultés le 26/09/2026) ; interview d'une rédactrice SEO, anonymisée.</p>
   <div class="num">7 / 15</div>
   <div class="notes">Pour savoir ce qu'on attend vraiment d'un rédacteur SEO, on est allés lire de vraies offres, sur quatre sites différents.
 Sur Indeed, une alternance à Faches-Thumesnil, juste à côté : on demande d'optimiser les fiches produits pour le SEO, mais aussi pour le GEO, c'est-à-dire pour les IA. Sur Welcome to the Jungle, l'agence Eskimoz cherche un Content Strategist entre 30 et 40 000 euros, pour optimiser les contenus « pour le Search et pour les moteurs de réponse ». Sur l'APEC, un poste de Content Manager exige une très bonne orthographe et des connaissances en SEO et en IA. Et sur LinkedIn, Hello Watt recrute un rédacteur SEO et GEO qui utilise Claude, Gemini et ChatGPT au quotidien.
 Ce qui revient partout : une orthographe irréprochable, le SEO, et maintenant l'IA. Côté savoir-être, on retrouve mot pour mot la rigueur, la curiosité et l'autonomie.
-Et on a demandé au professionnel quelle compétence était, selon lui, la plus sous-estimée.</div>
+Et la rédactrice SEO qu'on a interviewée dit exactement la même chose. Quand on lui demande les qualités indispensables, sa première réponse, c'est : « Il faut avant tout avoir une bonne maîtrise de la langue française et savoir rédiger clairement ». Elle ajoute la curiosité, la rigueur et l'esprit d'analyse. Les offres et le terrain disent donc la même chose.</div>
 </section>
 
 <!-- ============ 8 · OUTILS ============ -->
@@ -784,16 +799,16 @@ Et on a demandé au professionnel quelle compétence était, selon lui, la plus 
     </div>
     <div class="out-d">
       <div class="preuve" data-tw="capture interface"><img class="agrandir" src="../assets/captures/08-semrush.png" alt="Semrush, Keyword Overview du mot-clé rédacteur seo en France : volume 720 et difficulté 17 % encadrés"></div>
-      <span class="chip noir" data-tw="indispensable">L'outil indispensable selon le pro : <span class="manque">question 9</span></span>
+      <span class="chip noir" data-tw="indispensable">La rédactrice interviewée : « J'utilise principalement Google Search Console »</span>
     </div>
   </div>
-  <p class="pied" data-tw="source">Source : Semrush, Keyword Overview « rédacteur seo », France, ordinateur (consulté le 26/09/2026).</p>
+  <p class="pied" data-tw="source">Source : Semrush, Keyword Overview « rédacteur seo », France, ordinateur (consulté le 26/09/2026) ; interview d'une rédactrice SEO, anonymisée.</p>
   <div class="num">8 / 15</div>
   <div class="notes">Voici sa boîte à outils, classée par usage.
 Pour trouver les mots-clés : Semrush, Ahrefs, le Keyword Planner de Google, AnswerThePublic pour les questions des internautes. Pour enrichir le texte : YourTextGuru ou Surfer SEO, qui disent quels mots un texte doit contenir pour être complet. Pour publier : WordPress, avec une extension SEO comme Yoast ou Rank Math. Antidote pour la correction, la Search Console et Google Analytics pour le suivi.
 Et de plus en plus, l'IA.
 À droite, une vraie analyse Semrush, faite par nous : le mot-clé « rédacteur seo » est cherché 720 fois par mois en France, avec une difficulté de 17 %, donc facile à travailler. C'est exactement ce que le rédacteur regarde avant d'écrire.
-On a aussi demandé au pro quel était l'outil dont il ne pourrait pas se passer.</div>
+Et sur le terrain ? La rédactrice qu'on a interviewée nous dit : « J'utilise principalement Google Search Console », pour suivre les clics, les impressions et les mots-clés. Elle ajoute Google Analytics pour le comportement des visiteurs, Semrush ou Ahrefs pour la concurrence, WordPress pour publier, et l'IA pour trouver des idées. Elle ne cite ni YourTextGuru ni Surfer : les outils de sémantique sont donc un plus, pas une obligation.</div>
 </section>
 
 <!-- ============ 9 · STATUTS ET FORMATION ============ -->
@@ -838,20 +853,22 @@ Pour y accéder, on voit des profils de bac+2 à bac+5 en communication ou en ma
       <div class="stat noir"><b>0,04 à 0,30 €</b><span>par mot en freelance, selon le niveau et la technicité</span></div>
       <div class="stat"><b>240 à 430 €</b><span>par jour (TJM), du débutant au senior</span></div>
       <div class="stat"><b>40 à 120 €</b><span>un article de 800 mots</span></div>
-      <span class="chip" data-tw="le pro">Le pro : <span class="manque">question 13</span></span>
+      <div class="stat bleu" data-tw="le pro"><b>24 000 à 28 000 €</b><span>brut par an pour un débutant, selon la rédactrice interviewée (2 000 à 2 330 € par mois)</span></div>
     </div>
   </div>
-  <p class="pied" data-tw="source">Sources : Le Goff, salaire rédacteur web SEO ; La Fabrique du Net, prix de la rédaction web 2026 ; calculer-mon-tjm.fr (consultés le 25/09/2026).</p>
+  <p class="pied" data-tw="source">Sources : Le Goff, salaire rédacteur web SEO ; La Fabrique du Net, prix de la rédaction web 2026 ; calculer-mon-tjm.fr (consultés le 25/09/2026) ; interview d'une rédactrice SEO, anonymisée.</p>
   <div class="num">10 / 15</div>
   <div class="notes">Côté salaire, pour un salarié : entre 1 700 et 2 000 euros brut par mois pour un junior, 2 000 à 2 800 pour un confirmé, et jusqu'à 3 500 euros pour un senior ou un content manager.
 En freelance, on compte plutôt au mot : de 4 centimes pour du contenu simple à 30 centimes pour des sujets techniques comme la santé ou la finance. Soit 40 à 120 euros pour un article de 800 mots, ou 240 à 430 euros la journée.
-Ces chiffres viennent de sites spécialisés ; on les a comparés aux offres d'emploi et à ce que nous a dit le professionnel.</div>
+Ces chiffres viennent de sites spécialisés ; on les a comparés aux offres d'emploi et à ce que nous a dit la rédactrice qu'on a interviewée.
+Pour elle, un débutant commence autour de 24 000 à 28 000 euros brut par an, soit environ 2 000 à 2 330 euros par mois : un peu au-dessus de nos fiches. Avec de l'expérience, elle parle de 30 à 40 000 euros, et plus pour les postes qui incluent de la stratégie ou du management. Côté facturation, elle confirme qu'on facture à l'article, au nombre de mots ou au forfait, avec un accompagnement mensuel pour les clients qui veulent une prestation SEO complète.</div>
 </section>
 
 <!-- ============ 12 · ÉVOLUTIONS ============ -->
 <section id="s11">
   <h2 data-tw="titre">Évolutions de carrière</h2>
   <p class="sous-t" data-tw="nouvelle voie">Nouvelle voie : <b>spécialiste GEO</b>, pour faire citer la marque par ChatGPT, Perplexity et Google.</p>
+  <div class="cit cit-evo" data-tw="citation du pro"><q>« Après quelques années d'expérience, une rédactrice SEO peut devenir Content Manager, responsable éditorial ou consultante SEO. »</q><span>La rédactrice SEO interviewée</span></div>
   <div class="esc" data-tw="escalier">
     <div class="marche"><span class="n">01</span><b>Rédacteur web SEO</b><span>Junior, stage, alternance</span>
       <div class="qui-l"><a class="chip" href="https://www.linkedin.com/in/f-ahd/" target="_blank" rel="noopener">Foundi Ahamed · Bac+5, master référencement</a></div>
@@ -870,12 +887,12 @@ Ces chiffres viennent de sites spécialisés ; on les a comparés aux offres d'e
       <div class="prs" style="--k:2"><a class="pr yt" href="https://www.youtube.com/@Abondanceseo" target="_blank" rel="noopener" data-tw="profil Abondance"><span class="cad"><img src="../assets/captures/11-abondance.png" alt="Chaîne YouTube Abondance"></span><span class="url">youtube.com/@Abondanceseo</span></a><a class="pr yt" href="https://www.youtube.com/c/LaurentBourrelly" target="_blank" rel="noopener" data-tw="profil Bourrelly"><span class="cad"><img src="../assets/captures/11-bourrelly.png" alt="Chaîne YouTube de Laurent Bourrelly"></span><span class="url">youtube.com/c/LaurentBourrelly</span></a></div>
       <div class="pay">2 300 à 5 800 €<small>brut par mois</small></div></div>
   </div>
-  <p class="pied" data-tw="source">Sources : Le Goff, salaire rédacteur web SEO ; Journal du Net, salaire digital content manager ; Axio Formation, salaire consultant SEO (consultés le 26/09/2026).</p>
+  <p class="pied" data-tw="source">Sources : Le Goff, salaire rédacteur web SEO ; Journal du Net, salaire digital content manager ; Axio Formation, salaire consultant SEO (consultés le 26/09/2026) ; interview anonymisée.</p>
   <div class="num">11 / 15</div>
   <div class="notes">Le métier offre une vraie progression. On commence rédacteur web, souvent en stage ou en alternance. On devient senior en se spécialisant dans une thématique. Ensuite, on peut passer Content Manager, c'est-à-dire piloter toute la ligne éditoriale, puis consultant SEO ou responsable des contenus d'une entreprise.
 Et une voie nouvelle s'ouvre avec l'IA : le GEO, le fait d'optimiser des contenus pour qu'ils soient cités par ChatGPT, Perplexity ou les Aperçus IA de Google. C'est une compétence que les entreprises commencent à chercher.
 Sur chaque marche, on a mis le salaire et un nom connu du métier. En bas, notre camarade Foundi, qui prépare déjà son bac+5 en référencement. Ensuite Isabelle Canivet, l'autrice de « Bien rédiger pour le Web ». Côté contenu, Ann Handley et Joe Pulizzi. Et tout en haut, Olivier Andrieu, le fondateur d'Abondance, et Laurent Bourrelly, connu pour le cocon sémantique. Sous chaque nom, l'endroit où suivre leur contenu : LinkedIn, leur site ou leur chaîne YouTube.
-[Après l'interview : ce que le pro a vu comme évolutions autour de lui, question 19.]</div>
+Et la rédactrice qu'on a interviewée confirme cette progression : après quelques années, on devient Content Manager, responsable éditorial ou consultante SEO, puis responsable SEO ou cheffe de projet digital. Elle ajoute deux choses : certaines personnes se spécialisent, par exemple dans le netlinking ou le GEO, et d'autres deviennent freelances pour travailler directement avec plusieurs entreprises.</div>
 </section>
 
 <!-- ============ 13 · L'IA ============ -->
@@ -908,20 +925,24 @@ Donc l'IA fait très bien le premier jet, les idées de plan, les reformulations
   <h2 data-tw="titre">Théorie vs terrain</h2>
   <div class="tvt">
     <table data-tw="tableau des écarts">
-      <thead><tr><th>Thème</th><th>Ce que disent les fiches métiers</th><th>Ce que dit le pro</th><th>Écart</th></tr></thead>
+      <thead><tr><th>Thème</th><th>Ce que disent les fiches métiers</th><th>Ce que dit la rédactrice SEO</th><th>Écart</th></tr></thead>
       <tbody>
-        <tr><td>Missions</td><td>Articles, fiches produits, pages catégories</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
-        <tr><td>Outils</td><td>Semrush, YourTextGuru, WordPress, Search Console</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
-        <tr><td>Salaire débutant</td><td>1 700 à 2 000 € brut par mois</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
-        <tr><td>L'IA</td><td>Un assistant, pas un remplaçant</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
-        <tr><td>Évolution</td><td>Content Manager, consultant, GEO</td><td class="vide">Après l'interview</td><td class="ecart">?</td></tr>
+        <tr><td>Missions</td><td>Articles, fiches produits, pages catégories</td><td>« Des articles de blog, des pages de présentation et des pages de services » ; les fiches produits, pour le e-commerce</td><td class="ecart pres">≈</td></tr>
+        <tr><td>Outils</td><td>Semrush, YourTextGuru, WordPress, Search Console</td><td>Search Console en premier, puis Analytics, Semrush ou Ahrefs, WordPress. Pas d'outil de sémantique cité</td><td class="ecart pres">≈</td></tr>
+        <tr><td>Salaire débutant</td><td>1 700 à 2 000 € brut par mois</td><td>24 000 à 28 000 € brut par an, soit 2 000 à 2 330 € par mois</td><td class="ecart diff">≠</td></tr>
+        <tr><td>L'IA</td><td>Un assistant, pas un remplaçant</td><td>« Je ne pense pas qu'elle puisse remplacer totalement le travail d'un rédacteur »</td><td class="ecart ok">=</td></tr>
+        <tr><td>Google et l'IA</td><td>Mars 2026 : Google pénalise le contenu générique</td><td>« Google ne pénalise pas automatiquement un contenu » produit avec l'IA : ce qui compte, c'est la qualité</td><td class="ecart pres">≈</td></tr>
+        <tr><td>Évolution</td><td>Content Manager, consultant, GEO</td><td>Content Manager, responsable éditorial, consultante SEO, et aussi netlinking, GEO ou freelance</td><td class="ecart ok">=</td></tr>
       </tbody>
     </table>
+    <div class="leg" data-tw="légende"><span><b class="ok">=</b>confirme</span><span><b>≈</b>nuance</span><span><b class="diff">≠</b>écart</span></div>
   </div>
-  <p class="pied" data-tw="source">Interview semi-directive d'un professionnel de la rédaction SEO, anonymisé, le <span class="manque">JJ/MM/2026</span> (enregistrement audio disponible).</p>
+  <p class="pied" data-tw="source">Interview semi-directive d'une rédactrice SEO d'une entreprise française, anonymisée, 15 min (audio et transcription transmis le 31/10/2026).</p>
   <div class="num">13 / 15</div>
-  <div class="notes">Pour finir notre enquête, on a confronté ce qu'on avait trouvé dans les fiches métiers à ce que nous a dit un professionnel, le patron d'une entreprise qui pratique la rédaction SEO au quotidien.
-[À compléter après l'interview : là où il confirme, et surtout là où il nous a surpris.]</div>
+  <div class="notes">Pour finir notre enquête, on a confronté ce qu'on avait trouvé dans les fiches métiers à ce que nous a dit une rédactrice SEO, qui travaille dans une entreprise française qui accompagne les TPE et PME : création de sites, e-commerce, applications. L'entretien était semi-directif, il a duré quinze minutes, il est enregistré et anonymisé.
+Deux points où elle confirme nos fiches : le rôle de l'IA, un outil qui aide mais ne remplace pas, avec une phrase très claire : « Je ne pense pas qu'elle puisse remplacer totalement le travail d'un rédacteur » ; et les évolutions, Content Manager, responsable éditorial, consultante, plus le GEO.
+Trois points où elle nous apprend quelque chose. Les missions : chez elle, le quotidien, ce sont surtout des articles de blog, des pages de présentation et des pages de services, parce que ses clients sont des TPE et des PME qui vendent des prestations, pas des produits. Les outils : elle cite la Search Console avant tout, et aucun outil de sémantique comme YourTextGuru. Et Google et l'IA : pour elle, Google ne pénalise pas un contenu parce qu'il vient d'une IA, il pénalise un contenu sans vérification ni valeur ajoutée. C'est une nuance importante par rapport à notre slide 12.
+Le seul vrai écart chiffré, c'est le salaire : elle annonce 24 000 à 28 000 euros brut par an pour un débutant, soit 2 000 à 2 330 euros par mois, donc un peu plus haut que nos fiches, qui disent 1 700 à 2 000.</div>
 </section>
 
 <!-- ============ 15 · CONCLUSION ============ -->
@@ -934,7 +955,7 @@ Donc l'IA fait très bien le premier jet, les idées de plan, les reformulations
       <div class="b"><span class="k">E-E-A-T</span><div><b>L'IA rédige vite</b><span>L'humain vérifie, choisit l'angle, apporte son vécu</span></div></div>
       <div class="v"><span class="k">GEO</span><div><b>Être cité par les IA</b><span>Le GEO, nouveau terrain du métier</span></div></div>
     </div>
-    <div class="ph" data-tw="ce que ça nous a appris"><b>Ce que ce travail nous a appris</b><span>Une phrase du groupe, après l'interview</span><span class="qui">À écrire ensemble</span></div>
+    <div class="nous" data-tw="ce que ça nous a appris"><b>Ce que ce travail nous a appris</b><q>Les fiches métiers donnent le cadre, la rédactrice nous a montré le terrain : comprendre ce que cherche le lecteur, et vérifier ce que l'IA propose.</q></div>
   </div>
   <p class="pied" data-tw="source">Source : Digital Applied, zero-click search statistics 2026 (consulté le 26/09/2026).</p>
   <div class="num">14 / 15</div>
@@ -942,6 +963,7 @@ Donc l'IA fait très bien le premier jet, les idées de plan, les reformulations
 Notre réponse tient en trois blocs. D'abord, il y a moins de clics : 18 % de moins quand un Aperçu IA s'affiche. Mais ceux qui cliquent encore sont des lecteurs plus qualifiés.
 Ensuite, l'IA rédige vite, mais il y a un cadre que Google met en avant pour juger la qualité d'un contenu : le E-E-A-T. Ça veut dire Experience, Expertise, Autorité et Fiabilité. Autrement dit : l'auteur a-t-il vécu ce dont il parle, s'y connaît-il, est-il reconnu, et peut-on lui faire confiance ? Ce n'est pas un facteur de classement direct, c'est ce que Google cherche à repérer. Et l'expérience vécue, seul un humain peut l'apporter : il vérifie, il choisit l'angle, il raconte ce qu'il a vécu.
 Et enfin, un nouveau terrain s'ouvre : le GEO, écrire pour être cité par les IA elles-mêmes.
+Ce que ce travail nous a appris, c'est que les fiches métiers donnent le cadre, mais que la rédactrice qu'on a interviewée nous a montré le terrain : comprendre ce que cherche le lecteur, et vérifier ce que l'IA propose.
 Donc l'IA écrit le premier jet, mais c'est le rédacteur qui décide de ce qui est publié. Merci de nous avoir écoutés.</div>
 </section>
 
@@ -970,7 +992,7 @@ Donc l'IA écrit le premier jet, mais c'est le rédacteur qui décide de ce qui 
         <li><span class="r">OpenAI. (2026). <i>ChatGPT, « Quelles compétences pour être rédacteur SEO en 2026 ? »</i>. Conversation du groupe. 26/09/2026.</span></li>
         <li><span class="r">LinkedIn, YouTube, Yellow Dolphins. (2026). <i>Profils de F. Ahamed, I. Canivet, A. Handley, J. Pulizzi, O. Andrieu, L. Bourrelly</i>. 26/09/2026.</span></li>
         <li><span class="r">Pinterest. (s. d.). <i>Illustration de l'Aperçu IA de Google</i> (slide 12). pinterest.com. 26/09/2026.</span></li>
-        <li class="a-completer"><span class="r"><i>Interview d'un professionnel de la rédaction SEO</i>, anonymisé : date à compléter.</span></li>
+        <li><span class="r">Anonyme. (2026). <i>Interview d'une rédactrice SEO</i>, entreprise française, TPE et PME. Entretien semi-directif de 15 min, audio et transcription transmis le 31/10/2026.</span></li>
       </ol>
     </div>
     <div class="anx-ia" data-tw="IA et outils">
